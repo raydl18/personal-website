@@ -72,12 +72,12 @@ export default function Experience() {
                   '&:hover': { boxShadow: '0 4px 20px rgba(21,101,192,0.1)' },
                 }}
               >
-                <Typography variant="h6" sx={{ fontSize: '1rem' }}>{exp.role}</Typography>
-                <Typography variant="body2" color="primary.main" fontWeight={600} sx={{ mt: 0.25 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 0.25 }}>
+                  <Typography variant="h6" sx={{ fontSize: '1rem' }}>{exp.role}</Typography>
+                  <Typography variant="body2" color="text.secondary" fontWeight={500} sx={{ ml: 2, whiteSpace: 'nowrap' }}>{exp.date}</Typography>
+                </Box>
+                <Typography variant="body2" color="primary.main" fontWeight={600} sx={{ mb: 1.5 }}>
                   {exp.company}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" fontWeight={500} sx={{ mb: 1.5 }}>
-                  {exp.date}
                 </Typography>
                 <Box component="ul" sx={{ pl: 2.5, mb: exp.tech.length ? 1.5 : 0, mt: 0 }}>
                   {exp.bullets.map((b, i) => (
