@@ -17,7 +17,7 @@ const experiences = [
     date: 'Mar 2026 – Present',
     tech: ['HTML', 'CSS', 'JavaScript', 'PWA'],
     bullets: [
-      'Built and shipped a progressive web app to the Android / Google Play Store.',
+      'Built and published a progressive web app to the Android / Google Play Store for production.',
       'Self-promoted to adoption by fellow Northeastern Intramural Soccer officials.',
     ],
   },
