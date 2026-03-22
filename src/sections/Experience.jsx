@@ -22,12 +22,12 @@ const experiences = [
     ],
   },
   {
-    role: 'Developer',
+    role: 'Software Developer',
     company: 'Dragon Boat Seating App',
     date: 'Jan 2026 – Present',
     tech: ['Java', 'Spring Boot', 'PostgreSQL', 'HTML', 'CSS', 'JavaScript'],
     bullets: [
-      'Building a Spring Boot MVC app for managing paddler rosters with an interactive drag-and-drop boat layout.',
+      'Built a Spring Boot MVC app for managing paddler rosters with boat weight balancing guidance.',
       "Integrating with a local San Francisco dragon boat team's website, with CSV import/export for paddler data.",
     ],
   },
