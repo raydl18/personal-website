@@ -1,4 +1,4 @@
-import { Box, Typography, Paper, Chip, Stack, Grid } from '@mui/material';
+import { Box, Typography, Paper, Chip, Stack } from '@mui/material';
 
 const experiences = [
   {
@@ -54,9 +54,9 @@ export default function Experience() {
           What I'm working on
         </Typography>
 
-        <Grid container spacing={2} alignItems="stretch">
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 2 }}>
           {experiences.map((exp) => (
-            <Grid item xs={12} sm={6} key={exp.company} sx={{ display: 'flex' }}>
+            <Box key={exp.company} sx={{ display: 'flex' }}>
               <Paper
                 elevation={0}
                 sx={{
@@ -94,9 +94,9 @@ export default function Experience() {
                   </Stack>
                 )}
               </Paper>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Box>
     </Box>
   );
