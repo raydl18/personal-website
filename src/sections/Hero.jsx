@@ -20,12 +20,6 @@ export default function Hero() {
         position: 'relative',
       }}
     >
-      <Chip
-        label="Open to Work Opportunities — SWE · AI · Data Science"
-        color="primary"
-        variant="outlined"
-        sx={{ mb: 3, fontWeight: 600, fontSize: '0.8rem' }}
-      />
 
       <Typography
         variant="h1"
