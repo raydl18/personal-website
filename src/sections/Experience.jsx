@@ -33,7 +33,7 @@ const experiences = [
   },
   {
     role: 'Soccer Referee',
-    company: 'Fremont Youth → NU Intramural',
+    company: 'Fremont Youth Soccer Club & NU Intramural Official',
     date: 'Oct 2021 – Present',
     tech: [],
     bullets: [
