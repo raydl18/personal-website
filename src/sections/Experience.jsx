@@ -5,20 +5,21 @@ const experiences = [
     role: 'Software Developer',
     company: 'OASIS @ Northeastern',
     date: 'Feb 2026 – Present',
-    tech: ['React', 'Vite', 'MUI', 'Zustand', 'Supabase', 'PostgreSQL'],
+    tech: ['React', 'Zustand', 'Supabase', 'PostgreSQL'],
     bullets: [
-      'Building a Goodreads-style book tracking app with Open Library API integration, search, trending books, and recently viewed recommendations.',
-      'Implemented Supabase authentication and user profiles with reading stats, shelves, and a page progress tracker.',
+      'Built a fully deployed Goodreads-style book tracking app with Open Library API integration, search, trending books, and recently viewed recommendations.',
+      'Implemented Supabase authentication and user profiles with reading stats, shelves (read/reading), and a page progress tracker.',
     ],
   },
   {
-    role: 'App Developer',
-    company: 'RefClock (Self-employed)',
+    role: 'Founder & Developer',
+    company: 'RefClock (Mobile App)',
     date: 'Mar 2026 – Present',
     tech: ['HTML', 'CSS', 'JavaScript', 'PWA'],
     bullets: [
-      'Built and published a progressive web app to the Android / Google Play Store for production.',
-      'Self-promoted to adoption by fellow Northeastern Intramural Soccer officials.',
+      'Built a progressive web app with HTML/CSS/JavaScript, published for production on Android/Google Play Store.',
+      'Soccer referee timer/scorekeeper that logs live game data (goals, cards, player numbers).',
+      'Self-promoted the app to adoption by Northeastern Intramural Soccer officials.',
     ],
   },
   {
@@ -27,13 +28,13 @@ const experiences = [
     date: 'Jan 2026 – Present',
     tech: ['Java', 'Spring Boot', 'PostgreSQL', 'HTML', 'CSS', 'JavaScript'],
     bullets: [
-      'Built a Spring Boot MVC app for managing paddler rosters with boat weight balancing guidance.',
-      "Integrating with a local San Francisco dragon boat team's website, with CSV import/export for paddler data.",
+      'Built a Spring Boot MVC app for managing paddler rosters with an interactive drag-and-drop boat layout visualization.',
+      "Integrated with a local SF dragon boat team's website; supports CSV import/export for paddler data.",
     ],
   },
   {
     role: 'Soccer Referee',
-    company: 'Fremont Youth Soccer Club & NU Intramural Official',
+    company: 'Fremont Youth Soccer Club → Northeastern Intramural Official',
     date: 'Oct 2021 – Present',
     tech: [],
     bullets: [

@@ -4,17 +4,17 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 const projects = [
   {
-    title: 'Plant — NUACM Hackathon Winner',
+    title: 'Plant — NUACM Hackathon Education Track Winner',
     tech: ['Next.js', 'React', 'TypeScript', 'Python', 'Firebase', 'Gemini'],
     description:
-      'Education Track winner. Next.js course planning app for Northeastern students with AI chatbot recommendations. Web-scraped 1000+ courses and 100+ majors.',
+      'Built a Next.js app with a team of 3 that helps students plan academic schedules with AI-powered course recommendations, requirement tracking, and drag-and-drop semester planning. Web-scraped 1000+ courses and 100+ majors; integrated Firebase Auth and Google Gemini for personalized suggestions.',
     github: 'https://github.com/raydl18',
   },
   {
-    title: 'ML Essentials Bootcamp — AINU',
+    title: 'Machine Learning Essentials Bootcamp – AI Club, Northeastern',
     tech: ['Python', 'NumPy', 'Pandas', 'Matplotlib'],
     description:
-      'Implemented linear regression, PCA, and K-means clustering from scratch on real datasets. Built a multi-layer perceptron neural network achieving 86.5% test accuracy.',
+      'Implemented linear regression, PCA, and K-means clustering from scratch on real-world datasets (Spotify, UCI Wine). Built a multi-layer perceptron neural network from scratch with backpropagation, dropout, and mini-batch gradient descent; achieved 86.5% test accuracy.',
     github: 'https://github.com/raydl18',
   },
   {

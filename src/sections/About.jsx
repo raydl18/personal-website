@@ -7,7 +7,7 @@ const highlights = [
   {
     icon: <SchoolIcon sx={{ fontSize: 32, color: 'primary.main' }} />,
     title: 'Northeastern University',
-    body: 'B.S. Computer Science · GPA 3.94\nClass of 2029 · Boston, MA',
+    body: 'B.S. Computer Science · GPA 3.97\nClass of 2028 · Boston, MA',
   },
   {
     icon: <CodeIcon sx={{ fontSize: 32, color: 'primary.main' }} />,

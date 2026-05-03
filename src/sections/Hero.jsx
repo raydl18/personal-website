@@ -39,7 +39,7 @@ export default function Hero() {
         variant="body1"
         sx={{ color: 'text.secondary', maxWidth: 560, mb: 4, fontSize: '1.05rem', lineHeight: 1.8 }}
       >
-        Hi! I'm Raymond, a freshman CS student at NEU. I love building meaningful
+        Hi! I'm Raymond, a freshman CS student at Northeastern University. I love building meaningful
         projects, learning new languages and techniques, and being efficient.
       </Typography>
 
