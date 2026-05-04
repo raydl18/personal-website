@@ -23,30 +23,50 @@ export default function Navbar() {
     <>
       <AppBar
         position="fixed"
-        elevation={scrolled ? 2 : 0}
+        elevation={0}
         sx={{
-          bgcolor: scrolled ? 'rgba(255,255,255,0.95)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(8px)' : 'none',
-          transition: 'all 0.3s',
-          borderBottom: scrolled ? '1px solid #E3F2FD' : 'none',
+          bgcolor: scrolled ? 'rgba(248,249,255,0.92)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(12px)' : 'none',
+          transition: 'background-color 0.25s, border-color 0.25s',
+          borderBottom: scrolled ? '1px solid #c4c6cf' : '1px solid transparent',
         }}
       >
         <Toolbar sx={{ maxWidth: 1100, mx: 'auto', width: '100%', px: { xs: 2, md: 4 } }}>
           <Typography
-            variant="h6"
-            sx={{ flexGrow: 1, color: 'primary.main', fontWeight: 800, cursor: 'pointer' }}
+            sx={{
+              flexGrow: 1,
+              color: 'primary.main',
+              fontWeight: 800,
+              cursor: 'pointer',
+              fontFamily: '"Inter", sans-serif',
+              fontSize: '1.1rem',
+              letterSpacing: '-0.02em',
+            }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             RL
           </Typography>
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.5 }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.25 }}>
             {navLinks.map((link) => (
-              <Button key={link} onClick={() => scrollTo(link)} sx={{ color: 'text.primary', fontWeight: 500 }}>
+              <Button
+                key={link}
+                onClick={() => scrollTo(link)}
+                sx={{
+                  color: 'text.primary',
+                  fontWeight: 500,
+                  fontSize: '0.875rem',
+                  px: 2,
+                  '&:hover': { color: 'primary.main', bgcolor: 'transparent' },
+                }}
+              >
                 {link}
               </Button>
             ))}
           </Box>
-          <IconButton sx={{ display: { md: 'none' }, color: 'primary.main' }} onClick={() => setDrawerOpen(true)}>
+          <IconButton
+            sx={{ display: { md: 'none' }, color: 'primary.main' }}
+            onClick={() => setDrawerOpen(true)}
+          >
             <MenuIcon />
           </IconButton>
         </Toolbar>
@@ -57,7 +77,10 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <ListItem key={link} disablePadding>
               <ListItemButton onClick={() => scrollTo(link)}>
-                <ListItemText primary={link} />
+                <ListItemText
+                  primary={link}
+                  primaryTypographyProps={{ fontFamily: '"Inter", sans-serif', fontWeight: 500 }}
+                />
               </ListItemButton>
             </ListItem>
           ))}

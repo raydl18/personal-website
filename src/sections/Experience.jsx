@@ -1,4 +1,4 @@
-import { Box, Typography, Paper, Chip, Stack } from '@mui/material';
+import { Box, Typography, Chip, Stack } from '@mui/material';
 
 const experiences = [
   {
@@ -46,55 +46,114 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <Box id="experience" sx={{ py: { xs: 6, md: 8 }, px: 3, bgcolor: 'background.paper' }}>
+    <Box id="experience" sx={{ py: { xs: 10, md: 16 }, px: 3, bgcolor: 'background.default' }}>
       <Box sx={{ maxWidth: 1100, mx: 'auto' }}>
-        <Typography variant="overline" color="primary" fontWeight={700} letterSpacing={2}>
+        <Typography variant="overline" color="primary">
           Currently
         </Typography>
-        <Typography variant="h3" sx={{ mb: 4, mt: 0.5 }}>
+        <Typography variant="h3" sx={{ mb: 8, mt: 0.5 }}>
           What I'm working on
         </Typography>
 
-        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 2 }}>
-          {experiences.map((exp) => (
-            <Box key={exp.company} sx={{ display: 'flex' }}>
-              <Paper
-                elevation={0}
-                sx={{
-                  p: 3,
-                  width: '100%',
+        {/* Timeline */}
+        <Box sx={{ position: 'relative' }}>
+          {/* Hairline */}
+          <Box sx={{
+            position: 'absolute',
+            left: '6px',
+            top: '8px',
+            bottom: '8px',
+            width: '1px',
+            bgcolor: 'divider',
+          }} />
+
+          {experiences.map((exp, i) => (
+            <Box
+              key={exp.company}
+              sx={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '28px',
+                mb: i < experiences.length - 1 ? 7 : 0,
+              }}
+            >
+              {/* Dot */}
+              <Box sx={{
+                width: '13px',
+                height: '13px',
+                borderRadius: '50%',
+                bgcolor: 'primary.main',
+                flexShrink: 0,
+                mt: '3px',
+                zIndex: 1,
+              }} />
+
+              {/* Content */}
+              <Box sx={{ flex: 1 }}>
+                <Box sx={{
                   display: 'flex',
-                  flexDirection: 'column',
-                  border: '1px solid #E3F2FD',
-                  borderLeft: '4px solid',
-                  borderLeftColor: 'primary.main',
-                  borderRadius: 3,
-                  transition: 'box-shadow 0.2s',
-                  '&:hover': { boxShadow: '0 4px 20px rgba(21,101,192,0.1)' },
-                }}
-              >
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 0.25 }}>
-                  <Typography variant="h6" sx={{ fontSize: '1rem' }}>{exp.role}</Typography>
-                  <Typography variant="body2" color="text.secondary" fontWeight={500} sx={{ ml: 2, whiteSpace: 'nowrap' }}>{exp.date}</Typography>
+                  justifyContent: 'space-between',
+                  alignItems: 'baseline',
+                  flexWrap: 'wrap',
+                  gap: 1,
+                  mb: 0.5,
+                }}>
+                  <Typography variant="h6" sx={{ fontSize: '1rem' }}>
+                    {exp.role}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: '"Inter", sans-serif',
+                      fontWeight: 700,
+                      fontSize: '0.7rem',
+                      letterSpacing: '0.08em',
+                      color: 'text.secondary',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    {exp.date}
+                  </Typography>
                 </Box>
-                <Typography variant="body2" color="primary.main" fontWeight={600} sx={{ mb: 1.5 }}>
+
+                <Typography
+                  sx={{
+                    fontFamily: '"Inter", sans-serif',
+                    fontWeight: 600,
+                    fontSize: '0.85rem',
+                    color: 'secondary.main',
+                    mb: 1.5,
+                  }}
+                >
                   {exp.company}
                 </Typography>
-                <Box component="ul" sx={{ pl: 2.5, mb: exp.tech.length ? 1.5 : 0, mt: 0 }}>
-                  {exp.bullets.map((b, i) => (
-                    <Typography component="li" variant="body2" color="text.secondary" key={i} sx={{ lineHeight: 1.7 }}>
+
+                <Box component="ul" sx={{ pl: 2.5, mb: exp.tech.length ? 2 : 0, mt: 0 }}>
+                  {exp.bullets.map((b, j) => (
+                    <Typography
+                      component="li"
+                      variant="body2"
+                      color="text.secondary"
+                      key={j}
+                      sx={{ mb: 0.5 }}
+                    >
                       {b}
                     </Typography>
                   ))}
                 </Box>
+
                 {exp.tech.length > 0 && (
                   <Stack direction="row" flexWrap="wrap" gap={0.75}>
                     {exp.tech.map((t) => (
-                      <Chip key={t} label={t} size="small" color="primary" variant="outlined" />
+                      <Chip
+                        key={t}
+                        label={t}
+                        size="small"
+                        sx={{ bgcolor: '#eff4ff', color: '#002045', border: '1px solid #dce9ff' }}
+                      />
                     ))}
                   </Stack>
                 )}
-              </Paper>
+              </Box>
             </Box>
           ))}
         </Box>

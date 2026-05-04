@@ -38,65 +38,88 @@ export default function Projects() {
   const proj = projects[selected];
 
   return (
-    <Box id="projects" sx={{ py: { xs: 6, md: 8 }, px: 3, maxWidth: 1100, mx: 'auto' }}>
-      <Typography variant="overline" color="primary" fontWeight={700} letterSpacing={2}>
-        Projects
-      </Typography>
-      <Typography variant="h3" sx={{ mb: 4, mt: 0.5 }}>
-        Past projects
-      </Typography>
+    <Box id="projects" sx={{ py: { xs: 10, md: 16 }, px: 3, bgcolor: 'background.paper' }}>
+      <Box sx={{ maxWidth: 1100, mx: 'auto' }}>
+        <Typography variant="overline" color="primary">
+          Projects
+        </Typography>
+        <Typography variant="h3" sx={{ mb: 8, mt: 0.5 }}>
+          Past projects
+        </Typography>
 
-      <Box sx={{ display: 'flex', gap: 3, flexDirection: { xs: 'column', md: 'row' } }}>
-        <Tabs
-          orientation="vertical"
-          value={selected}
-          onChange={(_, v) => setSelected(v)}
-          sx={{
-            borderRight: { md: '2px solid #E3F2FD' },
-            minWidth: { md: 260 },
-            '& .MuiTab-root': {
-              alignItems: 'flex-start',
-              textAlign: 'left',
-              textTransform: 'none',
-              fontWeight: 600,
-              fontSize: '0.85rem',
-              color: 'text.secondary',
-              px: 2,
-              py: 1.5,
-              minHeight: 'unset',
-            },
-            '& .Mui-selected': { color: 'primary.main' },
-            '& .MuiTabs-indicator': { left: { md: 'auto' }, right: { md: 0 } },
-          }}
-        >
-          {projects.map((p, i) => (
-            <Tab key={i} label={p.title} />
-          ))}
-        </Tabs>
-
-        <Paper
-          elevation={0}
-          sx={{ flex: 1, p: 3, border: '1px solid #E3F2FD', borderRadius: 3, minHeight: 180 }}
-        >
-          <Typography variant="h6" sx={{ fontSize: '1.05rem', mb: 2 }}>{proj.title}</Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 2.5, lineHeight: 1.8 }}>
-            {proj.description}
-          </Typography>
-          <Stack direction="row" flexWrap="wrap" gap={0.75} sx={{ mb: 2 }}>
-            {proj.tech.map((t) => (
-              <Chip key={t} label={t} size="small" sx={{ bgcolor: '#E3F2FD', color: 'primary.dark', fontWeight: 500 }} />
-            ))}
-          </Stack>
-          <Button
-            size="small"
-            startIcon={<GitHubIcon fontSize="small" />}
-            href={proj.github}
-            target="_blank"
-            sx={{ color: 'primary.main', p: 0 }}
+        <Box sx={{ display: 'flex', gap: 4, flexDirection: { xs: 'column', md: 'row' } }}>
+          <Tabs
+            orientation="vertical"
+            value={selected}
+            onChange={(_, v) => setSelected(v)}
+            sx={{
+              borderRight: { md: '1px solid #c4c6cf' },
+              minWidth: { md: 270 },
+              '& .MuiTab-root': {
+                alignItems: 'flex-start',
+                textAlign: 'left',
+                fontWeight: 500,
+                fontSize: '0.8rem',
+                color: 'text.secondary',
+                px: 2,
+                py: 1.75,
+                minHeight: 'unset',
+                lineHeight: 1.4,
+              },
+              '& .Mui-selected': { color: 'primary.main', fontWeight: 600 },
+              '& .MuiTabs-indicator': { right: 0, left: 'auto', width: '2px', bgcolor: 'primary.main' },
+            }}
           >
-            View on GitHub
-          </Button>
-        </Paper>
+            {projects.map((p, i) => (
+              <Tab key={i} label={p.title} />
+            ))}
+          </Tabs>
+
+          <Paper
+            elevation={0}
+            sx={{
+              flex: 1,
+              p: 4,
+              border: '1px solid',
+              borderColor: 'divider',
+              borderRadius: 2,
+              minHeight: 200,
+              transition: 'box-shadow 0.18s',
+              '&:hover': { boxShadow: '2px 3px 0 #c4c6cf' },
+            }}
+          >
+            <Typography variant="h6" sx={{ fontSize: '1rem', mb: 2.5 }}>{proj.title}</Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+              {proj.description}
+            </Typography>
+            <Stack direction="row" flexWrap="wrap" gap={0.75} sx={{ mb: 2.5 }}>
+              {proj.tech.map((t) => (
+                <Chip
+                  key={t}
+                  label={t}
+                  size="small"
+                  sx={{ bgcolor: '#eff4ff', color: '#002045', border: '1px solid #dce9ff' }}
+                />
+              ))}
+            </Stack>
+            <Button
+              size="small"
+              startIcon={<GitHubIcon sx={{ fontSize: '16px !important' }} />}
+              href={proj.github}
+              target="_blank"
+              sx={{
+                color: 'primary.main',
+                p: 0,
+                fontFamily: '"Inter", sans-serif',
+                fontWeight: 600,
+                fontSize: '0.8rem',
+                '&:hover': { bgcolor: 'transparent', textDecoration: 'underline' },
+              }}
+            >
+              View on GitHub
+            </Button>
+          </Paper>
+        </Box>
       </Box>
     </Box>
   );

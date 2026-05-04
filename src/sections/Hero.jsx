@@ -14,7 +14,7 @@ export default function Hero() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        background: 'linear-gradient(160deg, #E3F2FD 0%, #FFFFFF 50%, #E8F4FD 100%)',
+        bgcolor: 'background.default',
         px: 3,
         pt: 8,
         position: 'relative',
@@ -25,52 +25,56 @@ export default function Hero() {
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
           alignItems: 'center',
-          gap: { xs: 4, md: 8 },
+          gap: { xs: 5, md: 9 },
           maxWidth: 1000,
           width: '100%',
         }}
       >
-        {/* Photo */}
         <Box
           component="img"
           src={profilePhoto}
           alt="Raymond Liu"
           sx={{
-            width: { xs: 180, md: 240 },
-            height: { xs: 180, md: 240 },
+            width: { xs: 168, md: 232 },
+            height: { xs: 168, md: 232 },
             borderRadius: '50%',
             objectFit: 'cover',
             objectPosition: 'center 20%',
-            boxShadow: '0 8px 32px rgba(21,101,192,0.15)',
+            border: '1px solid #c4c6cf',
             flexShrink: 0,
           }}
         />
 
-        {/* Text content */}
         <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
           <Typography
             variant="h1"
-            sx={{ fontSize: { xs: '2.8rem', md: '4.5rem' }, mb: 1, color: 'text.primary', lineHeight: 1.1 }}
+            sx={{ fontSize: { xs: '2.75rem', md: '4rem' }, mb: 1.5, color: 'text.primary' }}
           >
             Raymond Liu
           </Typography>
 
           <Typography
-            variant="h4"
-            sx={{ color: 'primary.main', fontWeight: 700, mb: 2, fontSize: { xs: '1.2rem', md: '1.6rem' } }}
+            sx={{
+              color: 'secondary.main',
+              fontWeight: 600,
+              mb: 2.5,
+              fontSize: { xs: '1.05rem', md: '1.2rem' },
+              fontFamily: '"Inter", sans-serif',
+              letterSpacing: '-0.01em',
+            }}
           >
             CS Student @ Northeastern University
           </Typography>
 
           <Typography
             variant="body1"
-            sx={{ color: 'text.secondary', maxWidth: 520, mb: 4, fontSize: '1.05rem', lineHeight: 1.8 }}
+            sx={{ color: 'text.secondary', maxWidth: 500, mb: 4.5 }}
           >
             Hi! I'm Raymond, a freshman CS student at Northeastern University. I love building meaningful
             projects, learning new languages and techniques, and being efficient.
           </Typography>
 
-          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
             <Button
               variant="contained"
               size="large"
@@ -105,16 +109,22 @@ export default function Hero() {
       </Box>
 
       <Box
-        sx={{ position: 'absolute', bottom: 32, cursor: 'pointer', color: 'primary.main', animation: 'bounce 2s infinite' }}
+        sx={{
+          position: 'absolute',
+          bottom: 32,
+          cursor: 'pointer',
+          color: 'primary.main',
+          animation: 'bounce 2s infinite',
+        }}
         onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
       >
-        <KeyboardArrowDownIcon sx={{ fontSize: 36 }} />
+        <KeyboardArrowDownIcon sx={{ fontSize: 32 }} />
       </Box>
 
       <style>{`
         @keyframes bounce {
           0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(8px); }
+          50% { transform: translateY(7px); }
         }
       `}</style>
     </Box>
