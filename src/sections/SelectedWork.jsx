@@ -12,8 +12,8 @@ const projects = [
       'Logs live game data — goals, cards, player numbers — with auth and persistence. ' +
       'Self-promoted to adoption by Northeastern Intramural Soccer officials.',
     stats: [
-      { label: 'Published', sub: 'Google Play Store' },
-      { label: 'Production', sub: 'Live Status' },
+      { label: 'In Progress', sub: 'Google Play Store' },
+      { label: 'Production Testing', sub: 'Live Status' },
     ],
     screenshots: [refclockSetup, refclockGame],
     imageRight: true,
@@ -22,10 +22,10 @@ const projects = [
     title: 'Oasis Club @ NEU',
     tech: ['React', 'Zustand', 'Supabase', 'PostgreSQL'],
     description:
-      'A comprehensive book-tracking platform built for the Oasis Club community. ' +
-      'Features Open Library API integration, search, trending books, recently viewed ' +
+      'Built a fully deployed book-tracking platform built for the Oasis Club project series. ' +
+      'Encourages daily reading habits with search, trending books, recently viewed ' +
       'recommendations, user profiles with stats, and a social feature to follow other users. ' +
-      'Implemented with Supabase authentication, React+Vite, MUI, Zustand, and PostgreSQL.',
+      'Implemented with Open Library API, Supabase authentication, React+Vite, MUI, Zustand, and PostgreSQL.',
     stats: [
       { label: 'Full Stack', sub: 'Architecture' },
       { label: 'Cloud Native', sub: 'Supabase DB' },
