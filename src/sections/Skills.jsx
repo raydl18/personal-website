@@ -30,9 +30,9 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 md:py-32 px-6 bg-white">
       <div className="max-w-container mx-auto">
-        <p className="font-inter text-xs font-bold text-primary uppercase tracking-widest mb-2">Skills</p>
+        <p className="font-inter text-xs font-bold text-primary uppercase tracking-widest mb-2">Tooling</p>
         <h2 className="font-inter text-4xl md:text-5xl font-bold text-primary tracking-tighter mb-16">
-          What I work with
+          Technical Proficiency
         </h2>
 
         <div className="border border-outline-variant/30 rounded-xl overflow-hidden">

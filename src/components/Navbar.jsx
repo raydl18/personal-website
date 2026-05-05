@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const navLinks = [
   { label: 'About', id: 'about' },
+  { label: 'Work', id: 'work' },
   { label: 'Experience', id: 'experience' },
   { label: 'Skills', id: 'skills' },
-  { label: 'Projects', id: 'projects' },
+  { label: 'Academic', id: 'academic' },
   { label: 'Contact', id: 'contact' },
 ];
 

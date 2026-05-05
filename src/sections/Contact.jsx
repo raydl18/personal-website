@@ -7,7 +7,8 @@ export default function Contact() {
           Let's connect
         </h2>
         <p className="font-newsreader text-lg text-on-surface-variant max-w-md mx-auto mb-16 opacity-80">
-          Open to software engineering internships, research, and interesting projects.
+          I'm currently seeking Summer Co-op and Internship opportunities. If you're looking for a
+          dedicated developer to join your team, let's connect.
         </p>
 
         <div className="border border-outline-variant/30 rounded-xl p-8 md:p-10 max-w-lg mx-auto hover:shadow-[2px_3px_0_#c4c6cf] transition-shadow">
@@ -42,8 +43,8 @@ export default function Contact() {
           </div>
         </div>
 
-        <p className="mt-16 font-inter text-xs text-on-surface-variant tracking-wide">
-          Built with React + Tailwind CSS · {new Date().getFullYear()} Raymond Liu
+        <p className="mt-16 font-inter text-xs text-on-surface-variant tracking-widest uppercase">
+          © {new Date().getFullYear()} Raymond Liu. Built with Precision.
         </p>
       </div>
     </section>

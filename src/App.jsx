@@ -1,9 +1,10 @@
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
-import Experience from './sections/Experience';
+import SelectedWork from './sections/SelectedWork';
+import OtherProjectsExperience from './sections/OtherProjectsExperience';
 import Skills from './sections/Skills';
-import Projects from './sections/Projects';
+import AcademicRecord from './sections/AcademicRecord';
 import Contact from './sections/Contact';
 
 export default function App() {
@@ -13,9 +14,10 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Experience />
+        <SelectedWork />
+        <OtherProjectsExperience />
         <Skills />
-        <Projects />
+        <AcademicRecord />
         <Contact />
       </main>
     </>
