@@ -1,100 +1,63 @@
-import { Box, Typography, Paper, Chip, Stack } from '@mui/material';
-import CodeIcon from '@mui/icons-material/Code';
-import WebIcon from '@mui/icons-material/Web';
-import StorageIcon from '@mui/icons-material/Storage';
-import PsychologyIcon from '@mui/icons-material/Psychology';
-import BuildIcon from '@mui/icons-material/Build';
-
 const skillGroups = [
   {
     category: 'Languages',
-    icon: <CodeIcon sx={{ fontSize: 18, color: 'primary.main' }} />,
+    icon: 'code',
     skills: ['Java', 'Python', 'JavaScript', 'TypeScript', 'C/C++', 'HTML/CSS', 'SQL'],
   },
   {
     category: 'Frontend',
-    icon: <WebIcon sx={{ fontSize: 18, color: 'primary.main' }} />,
+    icon: 'web',
     skills: ['React', 'Next.js', 'Vite', 'Material UI', 'Leaflet', 'Zustand'],
   },
   {
     category: 'Backend & DB',
-    icon: <StorageIcon sx={{ fontSize: 18, color: 'primary.main' }} />,
+    icon: 'storage',
     skills: ['Spring Boot', 'PostgreSQL', 'Supabase', 'Firebase'],
   },
   {
     category: 'ML & Data',
-    icon: <PsychologyIcon sx={{ fontSize: 18, color: 'primary.main' }} />,
+    icon: 'psychology',
     skills: ['NumPy', 'Pandas', 'Matplotlib', 'Linear Regression', 'Neural Networks', 'PCA', 'K-means'],
   },
   {
     category: 'Tools',
-    icon: <BuildIcon sx={{ fontSize: 18, color: 'primary.main' }} />,
+    icon: 'build',
     skills: ['Git', 'VS Code', 'Gradle', 'Linux/Ubuntu'],
   },
 ];
 
 export default function Skills() {
   return (
-    <Box id="skills" sx={{ py: { xs: 10, md: 16 }, px: 3, bgcolor: 'background.default' }}>
-      <Box sx={{ maxWidth: 1100, mx: 'auto' }}>
-        <Typography variant="overline" color="primary">
-          Skills
-        </Typography>
-        <Typography variant="h3" sx={{ mb: 8, mt: 0.5 }}>
+    <section id="skills" className="py-24 md:py-32 px-6 bg-white">
+      <div className="max-w-container mx-auto">
+        <p className="font-inter text-xs font-bold text-primary uppercase tracking-widest mb-2">Skills</p>
+        <h2 className="font-inter text-4xl md:text-5xl font-bold text-primary tracking-tighter mb-16">
           What I work with
-        </Typography>
+        </h2>
 
-        <Paper
-          elevation={0}
-          sx={{
-            border: '1px solid',
-            borderColor: 'divider',
-            borderRadius: 2,
-            overflow: 'hidden',
-          }}
-        >
+        <div className="border border-outline-variant/30 rounded-xl overflow-hidden">
           {skillGroups.map((group, i) => (
-            <Box
+            <div
               key={group.category}
-              sx={{
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: 3,
-                px: 4,
-                py: 2.75,
-                borderBottom: i < skillGroups.length - 1 ? '1px solid' : 'none',
-                borderColor: 'divider',
-                flexWrap: { xs: 'wrap', sm: 'nowrap' },
-              }}
+              className={`flex items-start gap-6 px-6 py-5 flex-wrap sm:flex-nowrap${
+                i < skillGroups.length - 1 ? ' border-b border-outline-variant/30' : ''
+              }`}
             >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, minWidth: 130, pt: 0.25 }}>
-                {group.icon}
-                <Typography
-                  sx={{
-                    fontFamily: '"Inter", sans-serif',
-                    fontWeight: 700,
-                    fontSize: '0.78rem',
-                    color: 'primary.main',
-                    letterSpacing: '0.03em',
-                  }}
-                >
+              <div className="flex items-center gap-2 min-w-[130px] pt-0.5">
+                <span className="material-symbols-outlined text-primary text-[18px]">{group.icon}</span>
+                <span className="font-inter font-bold text-[0.78rem] text-primary tracking-wide">
                   {group.category}
-                </Typography>
-              </Box>
-              <Stack direction="row" flexWrap="wrap" gap={0.75}>
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
                 {group.skills.map((s) => (
-                  <Chip
-                    key={s}
-                    label={s}
-                    size="small"
-                    sx={{ bgcolor: '#eff4ff', color: '#0b1c30', border: '1px solid #dce9ff' }}
-                  />
+                  <span key={s} className="tech-tag">{s}</span>
                 ))}
-              </Stack>
-            </Box>
+              </div>
+            </div>
           ))}
-        </Paper>
-      </Box>
-    </Box>
+        </div>
+      </div>
+    </section>
   );
 }

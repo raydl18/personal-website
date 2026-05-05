@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { Box, Typography, Tab, Tabs, Paper, Chip, Stack, Button } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
 
 const projects = [
   {
@@ -38,89 +36,55 @@ export default function Projects() {
   const proj = projects[selected];
 
   return (
-    <Box id="projects" sx={{ py: { xs: 10, md: 16 }, px: 3, bgcolor: 'background.paper' }}>
-      <Box sx={{ maxWidth: 1100, mx: 'auto' }}>
-        <Typography variant="overline" color="primary">
-          Projects
-        </Typography>
-        <Typography variant="h3" sx={{ mb: 8, mt: 0.5 }}>
+    <section id="projects" className="py-24 md:py-32 px-6">
+      <div className="max-w-container mx-auto">
+        <p className="font-inter text-xs font-bold text-primary uppercase tracking-widest mb-2">Projects</p>
+        <h2 className="font-inter text-4xl md:text-5xl font-bold text-primary tracking-tighter mb-16">
           Past projects
-        </Typography>
+        </h2>
 
-        <Box sx={{ display: 'flex', gap: 4, flexDirection: { xs: 'column', md: 'row' } }}>
-          <Tabs
-            orientation="vertical"
-            value={selected}
-            onChange={(_, v) => setSelected(v)}
-            sx={{
-              borderRight: { md: '1px solid #c4c6cf' },
-              minWidth: { md: 270 },
-              '& .MuiTab-root': {
-                alignItems: 'flex-start',
-                textAlign: 'left',
-                fontWeight: 500,
-                fontSize: '0.8rem',
-                color: 'text.secondary',
-                px: 2,
-                py: 1.75,
-                minHeight: 'unset',
-                lineHeight: 1.4,
-              },
-              '& .Mui-selected': { color: 'primary.main', fontWeight: 600 },
-              '& .MuiTabs-indicator': { right: 0, left: 'auto', width: '2px', bgcolor: 'primary.main' },
-            }}
-          >
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Tab nav */}
+          <div className="flex flex-row md:flex-col overflow-x-auto scrollbar-hide md:overflow-visible md:min-w-[270px] border-b md:border-b-0 md:border-r border-outline-variant/30">
             {projects.map((p, i) => (
-              <Tab key={i} label={p.title} />
+              <button
+                key={i}
+                onClick={() => setSelected(i)}
+                className={`flex-shrink-0 text-left px-3 md:px-4 py-3 md:py-3.5 font-inter text-sm leading-snug whitespace-nowrap md:whitespace-normal transition-colors
+                  border-b-[3px] md:border-b-0 md:border-r-[3px] ${
+                  selected === i
+                    ? 'border-primary text-primary font-semibold'
+                    : 'border-transparent text-on-surface-variant font-medium hover:text-on-surface'
+                }`}
+              >
+                {p.title}
+              </button>
             ))}
-          </Tabs>
+          </div>
 
-          <Paper
-            elevation={0}
-            sx={{
-              flex: 1,
-              p: 4,
-              border: '1px solid',
-              borderColor: 'divider',
-              borderRadius: 2,
-              minHeight: 200,
-              transition: 'box-shadow 0.18s',
-              '&:hover': { boxShadow: '2px 3px 0 #c4c6cf' },
-            }}
-          >
-            <Typography variant="h6" sx={{ fontSize: '1rem', mb: 2.5 }}>{proj.title}</Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+          {/* Detail panel */}
+          <div className="flex-1 p-6 md:p-8 border border-outline-variant/30 bg-white rounded-xl min-h-[200px] hover:shadow-[2px_3px_0_#c4c6cf] transition-shadow">
+            <h3 className="font-inter font-semibold text-on-surface text-base mb-3 leading-snug">{proj.title}</h3>
+            <p className="font-newsreader text-sm text-on-surface-variant leading-relaxed mb-5">
               {proj.description}
-            </Typography>
-            <Stack direction="row" flexWrap="wrap" gap={0.75} sx={{ mb: 2.5 }}>
+            </p>
+            <div className="flex flex-wrap gap-1.5 mb-5">
               {proj.tech.map((t) => (
-                <Chip
-                  key={t}
-                  label={t}
-                  size="small"
-                  sx={{ bgcolor: '#eff4ff', color: '#002045', border: '1px solid #dce9ff' }}
-                />
+                <span key={t} className="tech-tag">{t}</span>
               ))}
-            </Stack>
-            <Button
-              size="small"
-              startIcon={<GitHubIcon sx={{ fontSize: '16px !important' }} />}
+            </div>
+            <a
               href={proj.github}
               target="_blank"
-              sx={{
-                color: 'primary.main',
-                p: 0,
-                fontFamily: '"Inter", sans-serif',
-                fontWeight: 600,
-                fontSize: '0.8rem',
-                '&:hover': { bgcolor: 'transparent', textDecoration: 'underline' },
-              }}
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 font-inter font-semibold text-[0.8rem] text-primary hover:underline"
             >
+              <span className="material-symbols-outlined text-[16px]">terminal</span>
               View on GitHub
-            </Button>
-          </Paper>
-        </Box>
-      </Box>
-    </Box>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

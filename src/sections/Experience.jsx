@@ -1,5 +1,3 @@
-import { Box, Typography, Chip, Stack } from '@mui/material';
-
 const experiences = [
   {
     role: 'Software Developer',
@@ -46,118 +44,52 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <Box id="experience" sx={{ py: { xs: 10, md: 16 }, px: 3, bgcolor: 'background.default' }}>
-      <Box sx={{ maxWidth: 1100, mx: 'auto' }}>
-        <Typography variant="overline" color="primary">
-          Currently
-        </Typography>
-        <Typography variant="h3" sx={{ mb: 8, mt: 0.5 }}>
+    <section id="experience" className="py-24 md:py-32 px-6">
+      <div className="max-w-container mx-auto">
+        <p className="font-inter text-xs font-bold text-primary uppercase tracking-widest mb-2">Currently</p>
+        <h2 className="font-inter text-4xl md:text-5xl font-bold text-primary tracking-tighter mb-16">
           What I'm working on
-        </Typography>
+        </h2>
 
-        {/* Timeline */}
-        <Box sx={{ position: 'relative' }}>
-          {/* Hairline */}
-          <Box sx={{
-            position: 'absolute',
-            left: '6px',
-            top: '8px',
-            bottom: '8px',
-            width: '1px',
-            bgcolor: 'divider',
-          }} />
+        <div className="relative">
+          <div className="absolute left-[6px] top-2 bottom-2 w-px bg-outline-variant/50" />
 
-          {experiences.map((exp, i) => (
-            <Box
-              key={exp.company}
-              sx={{
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '28px',
-                mb: i < experiences.length - 1 ? 7 : 0,
-              }}
-            >
-              {/* Dot */}
-              <Box sx={{
-                width: '13px',
-                height: '13px',
-                borderRadius: '50%',
-                bgcolor: 'primary.main',
-                flexShrink: 0,
-                mt: '3px',
-                zIndex: 1,
-              }} />
+          <div className="flex flex-col gap-12">
+            {experiences.map((exp) => (
+              <div key={exp.company} className="flex items-start gap-7">
+                <div className="w-3 h-3 rounded-full bg-primary flex-shrink-0 mt-1 z-10" />
 
-              {/* Content */}
-              <Box sx={{ flex: 1 }}>
-                <Box sx={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'baseline',
-                  flexWrap: 'wrap',
-                  gap: 1,
-                  mb: 0.5,
-                }}>
-                  <Typography variant="h6" sx={{ fontSize: '1rem' }}>
-                    {exp.role}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontFamily: '"Inter", sans-serif',
-                      fontWeight: 700,
-                      fontSize: '0.7rem',
-                      letterSpacing: '0.08em',
-                      color: 'text.secondary',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    {exp.date}
-                  </Typography>
-                </Box>
+                <div className="flex-1">
+                  <div className="flex flex-wrap justify-between items-baseline gap-2 mb-1">
+                    <h3 className="font-inter font-semibold text-on-surface text-base">{exp.role}</h3>
+                    <span className="font-inter font-bold text-[0.7rem] text-on-surface-variant uppercase tracking-wider">
+                      {exp.date}
+                    </span>
+                  </div>
 
-                <Typography
-                  sx={{
-                    fontFamily: '"Inter", sans-serif',
-                    fontWeight: 600,
-                    fontSize: '0.85rem',
-                    color: 'secondary.main',
-                    mb: 1.5,
-                  }}
-                >
-                  {exp.company}
-                </Typography>
+                  <p className="font-inter font-semibold text-[0.85rem] text-secondary mb-3">{exp.company}</p>
 
-                <Box component="ul" sx={{ pl: 2.5, mb: exp.tech.length ? 2 : 0, mt: 0 }}>
-                  {exp.bullets.map((b, j) => (
-                    <Typography
-                      component="li"
-                      variant="body2"
-                      color="text.secondary"
-                      key={j}
-                      sx={{ mb: 0.5 }}
-                    >
-                      {b}
-                    </Typography>
-                  ))}
-                </Box>
-
-                {exp.tech.length > 0 && (
-                  <Stack direction="row" flexWrap="wrap" gap={0.75}>
-                    {exp.tech.map((t) => (
-                      <Chip
-                        key={t}
-                        label={t}
-                        size="small"
-                        sx={{ bgcolor: '#eff4ff', color: '#002045', border: '1px solid #dce9ff' }}
-                      />
+                  <ul className="list-disc pl-5 mb-3 space-y-1">
+                    {exp.bullets.map((b, j) => (
+                      <li key={j} className="font-newsreader text-sm text-on-surface-variant leading-relaxed">
+                        {b}
+                      </li>
                     ))}
-                  </Stack>
-                )}
-              </Box>
-            </Box>
-          ))}
-        </Box>
-      </Box>
-    </Box>
+                  </ul>
+
+                  {exp.tech.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5">
+                      {exp.tech.map((t) => (
+                        <span key={t} className="tech-tag">{t}</span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

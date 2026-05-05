@@ -1,71 +1,55 @@
-import { Box, Typography, Paper } from '@mui/material';
-import SchoolIcon from '@mui/icons-material/School';
-import CodeIcon from '@mui/icons-material/Code';
-import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
-
 const highlights = [
   {
-    icon: <SchoolIcon sx={{ fontSize: 26, color: 'primary.main' }} />,
+    icon: 'school',
     title: 'Northeastern University',
     body: 'B.S. Computer Science · GPA 3.97\nClass of 2028 · Boston, MA',
   },
   {
-    icon: <CodeIcon sx={{ fontSize: 26, color: 'primary.main' }} />,
+    icon: 'code',
     title: 'What I Build',
     body: 'Full-stack web apps, ML models, and mobile apps. I like making meaningful projects about topics that interest me.',
   },
   {
-    icon: <SportsSoccerIcon sx={{ fontSize: 26, color: 'primary.main' }} />,
+    icon: 'sports_soccer',
     title: 'Outside of Code',
     body: "I am part of the Northeastern Club badminton team, I weightlift, and I'm also a certified soccer referee with 150+ hours officiated.",
   },
 ];
 
-const cardSx = {
-  p: 4,
-  border: '1px solid',
-  borderColor: 'divider',
-  bgcolor: 'background.paper',
-  borderRadius: 2,
-  transition: 'box-shadow 0.18s',
-  '&:hover': { boxShadow: '2px 3px 0 #c4c6cf' },
-};
-
 export default function About() {
   return (
-    <Box id="about" sx={{ py: { xs: 10, md: 16 }, px: 3, maxWidth: 1100, mx: 'auto' }}>
-      <Typography variant="overline" color="primary">
-        About Me
-      </Typography>
-      <Typography variant="h3" sx={{ mb: 2, mt: 0.5 }}>
-        A bit about me
-      </Typography>
-      <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 640, mb: 7 }}>
-        I'm a freshman CS student at Northeastern looking for work opportunities in software engineering,
-        AI, or data science. I enjoy working on projects that challenge me and picking up new
-        skills along the way.
-      </Typography>
+    <section id="about" className="py-24 md:py-32 px-6 bg-white">
+      <div className="max-w-container mx-auto">
+        <p className="font-inter text-xs font-bold text-primary uppercase tracking-widest mb-2">About Me</p>
+        <h2 className="font-inter text-4xl md:text-5xl font-bold text-primary tracking-tighter mb-4">
+          A bit about me
+        </h2>
+        <p className="font-newsreader text-lg text-on-surface-variant max-w-xl mb-12 opacity-80">
+          I'm a freshman CS student at Northeastern looking for work opportunities in software engineering,
+          AI, or data science. I enjoy working on projects that challenge me and picking up new
+          skills along the way.
+        </p>
 
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
-        <Box sx={{ display: 'flex', gap: 2.5, flexDirection: { xs: 'column', sm: 'row' } }}>
-          {highlights.slice(0, 2).map((h) => (
-            <Paper key={h.title} elevation={0} sx={{ ...cardSx, flex: 1 }}>
-              <Box sx={{ mb: 2 }}>{h.icon}</Box>
-              <Typography variant="h6" sx={{ mb: 1 }}>{h.title}</Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ whiteSpace: 'pre-line' }}>
-                {h.body}
-              </Typography>
-            </Paper>
-          ))}
-        </Box>
-        <Paper elevation={0} sx={cardSx}>
-          <Box sx={{ mb: 2 }}>{highlights[2].icon}</Box>
-          <Typography variant="h6" sx={{ mb: 1 }}>{highlights[2].title}</Typography>
-          <Typography variant="body2" color="text.secondary">
-            {highlights[2].body}
-          </Typography>
-        </Paper>
-      </Box>
-    </Box>
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
+            {highlights.slice(0, 2).map((h) => (
+              <div
+                key={h.title}
+                className="flex-1 p-8 border border-outline-variant/30 bg-white rounded-xl hover:shadow-[2px_3px_0_#c4c6cf] transition-shadow"
+              >
+                <span className="material-symbols-outlined text-primary text-[26px] mb-4 block">{h.icon}</span>
+                <h3 className="font-inter font-semibold text-on-surface text-base mb-2">{h.title}</h3>
+                <p className="font-newsreader text-sm text-on-surface-variant whitespace-pre-line leading-relaxed">{h.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="p-8 border border-outline-variant/30 bg-white rounded-xl hover:shadow-[2px_3px_0_#c4c6cf] transition-shadow">
+            <span className="material-symbols-outlined text-primary text-[26px] mb-4 block">{highlights[2].icon}</span>
+            <h3 className="font-inter font-semibold text-on-surface text-base mb-2">{highlights[2].title}</h3>
+            <p className="font-newsreader text-sm text-on-surface-variant leading-relaxed">{highlights[2].body}</p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

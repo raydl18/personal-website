@@ -1,91 +1,69 @@
 import { useState, useEffect } from 'react';
-import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
 
-const navLinks = ['About', 'Experience', 'Projects', 'Skills', 'Contact'];
+const navLinks = [
+  { label: 'About', id: 'about' },
+  { label: 'Experience', id: 'experience' },
+  { label: 'Skills', id: 'skills' },
+  { label: 'Projects', id: 'projects' },
+  { label: 'Contact', id: 'contact' },
+];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [drawerOpen, setDrawerOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollTo = (id) => {
-    document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
-    setDrawerOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setMenuOpen(false);
   };
 
   return (
-    <>
-      <AppBar
-        position="fixed"
-        elevation={0}
-        sx={{
-          bgcolor: scrolled ? 'rgba(248,249,255,0.92)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(12px)' : 'none',
-          transition: 'background-color 0.25s, border-color 0.25s',
-          borderBottom: scrolled ? '1px solid #c4c6cf' : '1px solid transparent',
-        }}
-      >
-        <Toolbar sx={{ maxWidth: 1100, mx: 'auto', width: '100%', px: { xs: 2, md: 4 } }}>
-          <Typography
-            sx={{
-              flexGrow: 1,
-              color: 'primary.main',
-              fontWeight: 800,
-              cursor: 'pointer',
-              fontFamily: '"Inter", sans-serif',
-              fontSize: '1.1rem',
-              letterSpacing: '-0.02em',
-            }}
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          >
-            RL
-          </Typography>
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.25 }}>
-            {navLinks.map((link) => (
-              <Button
-                key={link}
-                onClick={() => scrollTo(link)}
-                sx={{
-                  color: 'text.primary',
-                  fontWeight: 500,
-                  fontSize: '0.875rem',
-                  px: 2,
-                  '&:hover': { color: 'primary.main', bgcolor: 'transparent' },
-                }}
-              >
-                {link}
-              </Button>
-            ))}
-          </Box>
-          <IconButton
-            sx={{ display: { md: 'none' }, color: 'primary.main' }}
-            onClick={() => setDrawerOpen(true)}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+    <nav className="sticky top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
+      <div className="max-w-container mx-auto flex justify-between items-center px-6 py-4">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="text-lg font-bold tracking-tighter text-slate-900 flex items-center gap-2 font-inter"
+        >
+          <span className="material-symbols-outlined text-primary">code</span>
+          Raymond Liu
+        </button>
 
-      <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <List sx={{ width: 200, pt: 4 }}>
-          {navLinks.map((link) => (
-            <ListItem key={link} disablePadding>
-              <ListItemButton onClick={() => scrollTo(link)}>
-                <ListItemText
-                  primary={link}
-                  primaryTypographyProps={{ fontFamily: '"Inter", sans-serif', fontWeight: 500 }}
-                />
-              </ListItemButton>
-            </ListItem>
+        <div className="hidden md:flex gap-8 items-center font-inter text-sm font-medium tracking-tight">
+          {navLinks.map(({ label, id }) => (
+            <button
+              key={id}
+              onClick={() => scrollTo(id)}
+              className="text-slate-500 hover:text-slate-900 transition-colors duration-200"
+            >
+              {label}
+            </button>
           ))}
-        </List>
-      </Drawer>
-    </>
+          <button className="ml-4 px-5 py-2 bg-primary text-white rounded hover:shadow-lg hover:shadow-primary/20 transition-all flex items-center gap-2 font-bold">
+            Resume
+            <span className="material-symbols-outlined text-[18px]">download</span>
+          </button>
+        </div>
+
+        <button
+          className="md:hidden text-slate-900"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span className="material-symbols-outlined">{menuOpen ? 'close' : 'menu'}</span>
+        </button>
+      </div>
+
+      {menuOpen && (
+        <div className="md:hidden bg-white border-t border-slate-200 px-6 py-4 flex flex-col gap-4">
+          {navLinks.map(({ label, id }) => (
+            <button
+              key={id}
+              onClick={() => scrollTo(id)}
+              className="text-slate-700 font-inter font-medium text-sm text-left"
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      )}
+    </nav>
   );
 }

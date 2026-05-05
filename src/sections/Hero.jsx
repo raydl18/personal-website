@@ -1,132 +1,84 @@
-import { Box, Typography, Button, Stack } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { useEffect, useRef } from 'react';
 import profilePhoto from '../assets/profile.jpg';
 
 export default function Hero() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (el) setTimeout(() => el.classList.add('visible'), 100);
+  }, []);
+
   return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        bgcolor: 'background.default',
-        px: 3,
-        pt: 8,
-        position: 'relative',
-      }}
-    >
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' },
-          alignItems: 'center',
-          gap: { xs: 5, md: 9 },
-          maxWidth: 1000,
-          width: '100%',
-        }}
-      >
-        <Box
-          component="img"
-          src={profilePhoto}
-          alt="Raymond Liu"
-          sx={{
-            width: { xs: 168, md: 232 },
-            height: { xs: 168, md: 232 },
-            borderRadius: '50%',
-            objectFit: 'cover',
-            objectPosition: 'center 20%',
-            border: '1px solid #c4c6cf',
-            flexShrink: 0,
-          }}
-        />
+    <section className="pt-32 pb-24 md:pt-48 md:pb-40 relative overflow-hidden blueprint-grid">
+      <div ref={ref} className="max-w-container mx-auto px-6 md:px-12 fade-in">
+        <div className="grid md:grid-cols-12 gap-16 items-center">
 
-        <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
-          <Typography
-            variant="h1"
-            sx={{ fontSize: { xs: '2.75rem', md: '4rem' }, mb: 1.5, color: 'text.primary' }}
-          >
-            Raymond Liu
-          </Typography>
+          {/* Left: text */}
+          <div className="md:col-span-7 space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface-container/50 border border-outline-variant/30 text-primary font-inter text-xs font-bold rounded-full uppercase tracking-widest backdrop-blur-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              CS Student @ Northeastern University
+            </div>
 
-          <Typography
-            sx={{
-              color: 'secondary.main',
-              fontWeight: 600,
-              mb: 2.5,
-              fontSize: { xs: '1.05rem', md: '1.2rem' },
-              fontFamily: '"Inter", sans-serif',
-              letterSpacing: '-0.01em',
-            }}
-          >
-            CS Student @ Northeastern University
-          </Typography>
+            <h1 className="font-inter text-6xl md:text-7xl font-bold text-primary tracking-tighter leading-tight">
+              Raymond Liu
+            </h1>
 
-          <Typography
-            variant="body1"
-            sx={{ color: 'text.secondary', maxWidth: 500, mb: 4.5 }}
-          >
-            Hi! I'm Raymond, a freshman CS student at Northeastern University. I love building meaningful
-            projects, learning new languages and techniques, and being efficient.
-          </Typography>
+            <p className="font-inter text-2xl text-on-surface-variant font-medium">
+              B.S. in Computer Science | GPA: 3.97/4.0
+            </p>
 
-          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
-            <Button
-              variant="contained"
-              size="large"
-              startIcon={<GitHubIcon />}
-              href="https://github.com/raydl18"
-              target="_blank"
-              sx={{ px: 3 }}
-            >
-              GitHub
-            </Button>
-            <Button
-              variant="outlined"
-              size="large"
-              startIcon={<LinkedInIcon />}
-              href="https://linkedin.com/in/raymond-liu18"
-              target="_blank"
-              sx={{ px: 3 }}
-            >
-              LinkedIn
-            </Button>
-            <Button
-              variant="outlined"
-              size="large"
-              startIcon={<EmailIcon />}
-              href="mailto:liu.raymon@northeastern.edu"
-              sx={{ px: 3 }}
-            >
-              Email Me
-            </Button>
-          </Stack>
-        </Box>
-      </Box>
+            <p className="font-newsreader text-xl text-on-surface max-w-xl leading-relaxed opacity-80">
+              A software developer passionate about building purposeful tools and high-impact applications.
+              Currently maintaining a 3.97 GPA at Northeastern University while developing solutions for
+              campus organizations and personal ventures.
+            </p>
 
-      <Box
-        sx={{
-          position: 'absolute',
-          bottom: 32,
-          cursor: 'pointer',
-          color: 'primary.main',
-          animation: 'bounce 2s infinite',
-        }}
-        onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-      >
-        <KeyboardArrowDownIcon sx={{ fontSize: 32 }} />
-      </Box>
+            <div className="flex flex-wrap gap-5 pt-4">
+              <a
+                href="mailto:liu.raymon@northeastern.edu"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white font-inter font-bold text-sm rounded-xl hover:shadow-2xl hover:shadow-primary/40 transition-all hover-lift"
+              >
+                <span className="material-symbols-outlined text-[22px]">mail</span>
+                Email Me
+              </a>
+              <a
+                href="https://github.com/raydl18"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 border-2 border-outline text-primary font-inter font-bold text-sm rounded-xl hover:bg-surface-container-low transition-all hover-lift"
+              >
+                <span className="material-symbols-outlined text-[22px]">terminal</span>
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/raymond-liu18"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 border-2 border-outline text-primary font-inter font-bold text-sm rounded-xl hover:bg-surface-container-low transition-all hover-lift"
+              >
+                <span className="material-symbols-outlined text-[22px]">share</span>
+                LinkedIn
+              </a>
+            </div>
+          </div>
 
-      <style>{`
-        @keyframes bounce {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(7px); }
-        }
-      `}</style>
-    </Box>
+          {/* Right: photo */}
+          <div className="md:col-span-5 relative group">
+            <div className="aspect-[0.8] rounded-3xl overflow-hidden border-[16px] border-white/50 shadow-2xl relative z-10 glass-card">
+              <img
+                src={profilePhoto}
+                alt="Raymond Liu"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-700"
+              />
+            </div>
+            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/10 -z-10 rounded-full blur-[80px]"></div>
+            <div className="absolute -top-10 -left-10 w-48 h-48 bg-secondary-container/10 -z-10 rounded-full blur-[60px]"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
   );
 }

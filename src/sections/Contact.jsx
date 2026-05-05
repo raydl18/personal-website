@@ -1,85 +1,51 @@
-import { Box, Typography, Paper, Button, Stack } from '@mui/material';
-import EmailIcon from '@mui/icons-material/Email';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-
 export default function Contact() {
   return (
-    <Box id="contact" sx={{ py: { xs: 10, md: 16 }, px: 3, bgcolor: 'background.paper' }}>
-      <Box sx={{ maxWidth: 1100, mx: 'auto', textAlign: 'center' }}>
-        <Typography variant="overline" color="primary">
-          Contact
-        </Typography>
-        <Typography variant="h3" sx={{ mb: 2, mt: 0.5 }}>
+    <section id="contact" className="py-24 md:py-32 px-6 bg-white">
+      <div className="max-w-container mx-auto text-center">
+        <p className="font-inter text-xs font-bold text-primary uppercase tracking-widest mb-2">Contact</p>
+        <h2 className="font-inter text-4xl md:text-5xl font-bold text-primary tracking-tighter mb-3">
           Let's connect
-        </Typography>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 8, maxWidth: 480, mx: 'auto' }}>
+        </h2>
+        <p className="font-newsreader text-lg text-on-surface-variant max-w-md mx-auto mb-16 opacity-80">
           Open to software engineering internships, research, and interesting projects.
-        </Typography>
+        </p>
 
-        <Paper
-          elevation={0}
-          sx={{
-            p: { xs: 4, md: 5 },
-            border: '1px solid',
-            borderColor: 'divider',
-            borderRadius: 2,
-            maxWidth: 520,
-            mx: 'auto',
-            transition: 'box-shadow 0.18s',
-            '&:hover': { boxShadow: '2px 3px 0 #c4c6cf' },
-          }}
-        >
-          <Stack spacing={1.5}>
-            <Button
-              variant="contained"
-              size="large"
-              startIcon={<EmailIcon />}
+        <div className="border border-outline-variant/30 rounded-xl p-8 md:p-10 max-w-lg mx-auto hover:shadow-[2px_3px_0_#c4c6cf] transition-shadow">
+          <div className="flex flex-col gap-4">
+            <a
               href="mailto:liu.raymon@northeastern.edu"
-              fullWidth
-              sx={{ py: 1.5, fontSize: '0.9rem' }}
+              className="flex items-center justify-center gap-3 px-6 py-4 bg-primary text-white font-inter font-bold text-sm rounded-xl hover:bg-primary-container transition-colors"
             >
+              <span className="material-symbols-outlined text-[20px]">mail</span>
               liu.raymon@northeastern.edu
-            </Button>
-            <Stack direction="row" spacing={1.5}>
-              <Button
-                variant="outlined"
-                size="large"
-                startIcon={<GitHubIcon />}
+            </a>
+            <div className="flex gap-3">
+              <a
                 href="https://github.com/raydl18"
                 target="_blank"
-                fullWidth
-                sx={{ py: 1.5 }}
+                rel="noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 border-2 border-outline text-primary font-inter font-bold text-sm rounded-xl hover:bg-surface-container-low transition-colors"
               >
+                <span className="material-symbols-outlined text-[20px]">terminal</span>
                 GitHub
-              </Button>
-              <Button
-                variant="outlined"
-                size="large"
-                startIcon={<LinkedInIcon />}
+              </a>
+              <a
                 href="https://linkedin.com/in/raymond-liu18"
                 target="_blank"
-                fullWidth
-                sx={{ py: 1.5 }}
+                rel="noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 border-2 border-outline text-primary font-inter font-bold text-sm rounded-xl hover:bg-surface-container-low transition-colors"
               >
+                <span className="material-symbols-outlined text-[20px]">share</span>
                 LinkedIn
-              </Button>
-            </Stack>
-          </Stack>
-        </Paper>
+              </a>
+            </div>
+          </div>
+        </div>
 
-        <Typography
-          sx={{
-            mt: 10,
-            fontFamily: '"Inter", sans-serif',
-            fontSize: '0.75rem',
-            color: 'text.secondary',
-            letterSpacing: '0.03em',
-          }}
-        >
-          Built with React + MUI · {new Date().getFullYear()} Raymond Liu
-        </Typography>
-      </Box>
-    </Box>
+        <p className="mt-16 font-inter text-xs text-on-surface-variant tracking-wide">
+          Built with React + Tailwind CSS · {new Date().getFullYear()} Raymond Liu
+        </p>
+      </div>
+    </section>
   );
 }
