@@ -4,98 +4,126 @@ import oasisImg from '../assets/oasis.png';
 
 const projects = [
   {
-    title: 'RefClock',
-    subtitle: 'Soccer Referee Timer & Scorekeeper',
-    status: 'Published · Google Play Store',
-    tech: ['HTML', 'CSS', 'JavaScript', 'PWA'],
+    title: 'RefClock (Mobile App)',
+    tech: ['HTML/CSS', 'JavaScript', 'PWA', 'Google Play'],
     description:
-      'Built a progressive web app with HTML/CSS/JavaScript, published for production on Android/Google Play Store. Soccer referee timer/scorekeeper that logs live game data (goals, cards, player numbers) with auth and persistence. Self-promoted to adoption by Northeastern Intramural Soccer officials.',
-    github: 'https://github.com/raydl18',
+      'A production-ready soccer referee tool built as a Progressive Web App. ' +
+      'Built with HTML/CSS/JavaScript and published for production on Android/Google Play Store. ' +
+      'Logs live game data — goals, cards, player numbers — with auth and persistence. ' +
+      'Self-promoted to adoption by Northeastern Intramural Soccer officials.',
+    stats: [
+      { label: 'Published', sub: 'Google Play Store' },
+      { label: 'Production', sub: 'Live Status' },
+    ],
     screenshots: [refclockSetup, refclockGame],
-    screenshotBg: '#0f1117',
+    imageRight: true,
   },
   {
-    title: 'OASIS — Chapters',
-    subtitle: 'Goodreads-style Book Tracking App',
-    status: 'Completed · Jan – Apr 2026',
-    tech: ['React', 'Vite', 'MUI', 'Zustand', 'Supabase', 'PostgreSQL'],
+    title: 'Oasis Club @ NEU',
+    tech: ['React', 'Zustand', 'Supabase', 'PostgreSQL'],
     description:
-      'Built Chapters: a book tracking app with Open Library API integration, search, trending books, recently viewed recommendations, user profiles w/ stats, and a social feature to follow other users. Implemented Supabase authentication, React+Vite, MUI, Zustand.',
-    github: 'https://github.com/raydl18',
+      'A comprehensive book-tracking platform built for the Oasis Club community. ' +
+      'Features Open Library API integration, search, trending books, recently viewed ' +
+      'recommendations, user profiles with stats, and a social feature to follow other users. ' +
+      'Implemented with Supabase authentication, React+Vite, MUI, Zustand, and PostgreSQL.',
+    stats: [
+      { label: 'Full Stack', sub: 'Architecture' },
+      { label: 'Cloud Native', sub: 'Supabase DB' },
+    ],
     image: oasisImg,
+    imageRight: false,
   },
 ];
 
+function ProjectRow({ proj }) {
+  const imageEl = proj.screenshots ? (
+    <div className="rounded-2xl overflow-hidden bg-[#e8edf5] p-5 flex items-center justify-center gap-3">
+      {proj.screenshots.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt={`${proj.title} screenshot ${i + 1}`}
+          className="h-64 w-auto rounded-xl shadow-lg object-contain"
+        />
+      ))}
+    </div>
+  ) : (
+    <div className="rounded-2xl overflow-hidden bg-[#e8edf5] p-5 flex items-center justify-center">
+      <img
+        src={proj.image}
+        alt={proj.title}
+        className="w-full h-auto rounded-xl object-cover"
+      />
+    </div>
+  );
+
+  const textEl = (
+    <div>
+      <h3 className="font-newsreader text-3xl font-bold text-primary mb-4 tracking-tight">
+        {proj.title}
+      </h3>
+      <div className="flex flex-wrap gap-2 mb-5">
+        {proj.tech.map((t) => (
+          <span
+            key={t}
+            className="font-inter font-bold text-[0.6rem] text-on-surface-variant uppercase tracking-widest border border-outline-variant/50 px-2.5 py-1 rounded"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+      <p className="font-newsreader text-base text-on-surface-variant leading-relaxed mb-8">
+        {proj.description}
+      </p>
+      <div className="flex gap-10">
+        {proj.stats.map((s) => (
+          <div key={s.label}>
+            <p className="font-inter font-bold text-primary text-base">{s.label}</p>
+            <p className="font-inter font-bold text-[0.6rem] text-on-surface-variant uppercase tracking-widest mt-0.5">
+              {s.sub}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+      {proj.imageRight ? (
+        <>
+          <div>{textEl}</div>
+          <div>{imageEl}</div>
+        </>
+      ) : (
+        <>
+          <div className="order-2 md:order-1">{imageEl}</div>
+          <div className="order-1 md:order-2">{textEl}</div>
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function SelectedWork() {
   return (
-    <section id="work" className="py-24 md:py-32 px-6">
+    <section id="work" className="py-24 md:py-32 px-6 bg-white">
       <div className="max-w-container mx-auto">
-        <p className="font-inter text-xs font-bold text-primary uppercase tracking-widest mb-2">Engineering</p>
-        <h2 className="font-inter text-4xl md:text-5xl font-bold text-primary tracking-tighter mb-4">
-          Selected Engineering Work
-        </h2>
-        <p className="font-newsreader text-lg text-on-surface-variant max-w-xl mb-16 opacity-80">
-          Built, deployed, and shipped — from mobile apps to full-stack web platforms.
-        </p>
+        <div className="text-center mb-20">
+          <p className="font-inter text-xs font-bold text-primary uppercase tracking-widest mb-3">
+            Showcase
+          </p>
+          <h2 className="font-inter text-4xl md:text-5xl font-bold text-primary tracking-tighter mb-4">
+            Selected Engineering Work
+          </h2>
+          <p className="font-newsreader text-lg text-on-surface-variant max-w-xl mx-auto opacity-80">
+            Focusing on user-centric applications and robust system architecture.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="flex flex-col gap-24">
           {projects.map((proj) => (
-            <div
-              key={proj.title}
-              className="flex flex-col border border-outline-variant/30 bg-white rounded-xl overflow-hidden hover:shadow-[4px_4px_0_#002045] hover:-translate-y-0.5 transition-all duration-200"
-            >
-              <div className="aspect-video relative overflow-hidden">
-                {proj.screenshots ? (
-                  <div
-                    className="absolute inset-0 flex items-center justify-center gap-3 p-4"
-                    style={{ backgroundColor: proj.screenshotBg }}
-                  >
-                    {proj.screenshots.map((src, i) => (
-                      <img
-                        key={i}
-                        src={src}
-                        alt={`${proj.title} screenshot ${i + 1}`}
-                        className="h-full w-auto rounded-xl shadow-2xl object-contain"
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <img
-                    src={proj.image}
-                    alt={proj.title}
-                    className="absolute inset-0 w-full h-full object-cover object-top"
-                  />
-                )}
-              </div>
-
-              <div className="flex flex-col flex-1 p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-surface-container-low border border-surface-container-high rounded-full font-inter font-bold text-[0.6rem] text-primary uppercase tracking-widest">
-                    <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
-                    {proj.status}
-                  </span>
-                  <a
-                    href={proj.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-outline hover:text-primary transition-colors"
-                    aria-label="View on GitHub"
-                  >
-                    <span className="material-symbols-outlined text-[20px]">terminal</span>
-                  </a>
-                </div>
-                <h3 className="font-inter font-bold text-on-surface text-xl tracking-tight mb-0.5">{proj.title}</h3>
-                <p className="font-inter font-semibold text-secondary text-sm mb-3">{proj.subtitle}</p>
-                <p className="font-newsreader text-sm text-on-surface-variant leading-relaxed mb-5 flex-1">
-                  {proj.description}
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {proj.tech.map((t) => (
-                    <span key={t} className="tech-tag">{t}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <ProjectRow key={proj.title} proj={proj} />
           ))}
         </div>
       </div>
