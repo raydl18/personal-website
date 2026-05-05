@@ -66,12 +66,17 @@ export default function Hero() {
 
           {/* Right: photo */}
           <div className="md:col-span-5 relative group">
-            <div className="aspect-[0.8] rounded-3xl overflow-hidden border-[16px] border-white/50 shadow-2xl relative z-10 glass-card">
-              <img
-                src={profilePhoto}
-                alt="Raymond Liu"
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-700"
-              />
+            <div className="relative">
+              {/* Offset decorative frame */}
+              <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-[1.5px] border-primary/20 pointer-events-none" />
+              {/* Photo */}
+              <div className="aspect-[0.85] rounded-2xl overflow-hidden border border-outline-variant/40 shadow-xl relative z-10 group-hover:shadow-2xl transition-shadow duration-500">
+                <img
+                  src={profilePhoto}
+                  alt="Raymond Liu"
+                  className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
+                />
+              </div>
             </div>
             <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/10 -z-10 rounded-full blur-[80px]"></div>
             <div className="absolute -top-10 -left-10 w-48 h-48 bg-secondary-container/10 -z-10 rounded-full blur-[60px]"></div>
