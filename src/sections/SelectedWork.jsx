@@ -135,7 +135,7 @@ function ShowcaseRow({ proj }) {
             key={i}
             src={src}
             alt={`${proj.title} screenshot ${i + 1}`}
-            className="h-96 rounded-2xl shadow-2xl snap-center object-contain transform group-hover:scale-105 transition-transform duration-700"
+            className="h-96 rounded-2xl shadow-2xl snap-center object-contain group-hover:scale-105 transition-transform duration-700"
           />
         ))}
       </div>
@@ -146,13 +146,8 @@ function ShowcaseRow({ proj }) {
         <img
           src={proj.image}
           alt={proj.title}
-          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
         />
-        <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-          <span className="px-6 py-3 bg-white text-primary font-inter font-bold rounded-full shadow-lg">
-            View Details
-          </span>
-        </div>
       </div>
     </div>
   );

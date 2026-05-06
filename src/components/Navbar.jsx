@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 const navLinks = [
+  { label: 'About', id: null },
   { label: 'Work', id: 'projects' },
   { label: 'Skills', id: 'skills' },
   { label: 'Contact', id: 'contact' },
@@ -10,7 +11,11 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    if (id) {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     setMenuOpen(false);
   };
 
