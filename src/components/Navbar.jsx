@@ -1,11 +1,8 @@
 import { useState } from 'react';
 
 const navLinks = [
-  { label: 'About', id: 'about' },
-  { label: 'Work', id: 'work' },
-  { label: 'Experience', id: 'experience' },
+  { label: 'Work', id: 'projects' },
   { label: 'Skills', id: 'skills' },
-  { label: 'Academic', id: 'academic' },
   { label: 'Contact', id: 'contact' },
 ];
 
@@ -19,16 +16,16 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
-      <div className="max-w-container mx-auto flex justify-between items-center px-6 py-4">
+      <div className="max-w-[1100px] mx-auto flex justify-between items-center px-6 py-5">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="text-lg font-bold tracking-tighter text-slate-900 flex items-center gap-2 font-inter"
+          className="text-xl font-inter font-bold tracking-tighter text-slate-900 flex items-center gap-2"
         >
-          <span className="material-symbols-outlined text-primary">code</span>
+          <span className="material-symbols-outlined text-primary text-2xl">code</span>
           Raymond Liu
         </button>
 
-        <div className="hidden md:flex gap-8 items-center font-inter text-sm font-medium tracking-tight">
+        <div className="hidden md:flex gap-10 items-center font-inter text-sm font-semibold tracking-tight">
           {navLinks.map(({ label, id }) => (
             <button
               key={id}
@@ -38,7 +35,7 @@ export default function Navbar() {
               {label}
             </button>
           ))}
-          <button className="ml-4 px-5 py-2 bg-primary text-white rounded hover:shadow-lg hover:shadow-primary/20 transition-all flex items-center gap-2 font-bold">
+          <button className="ml-4 px-6 py-2.5 bg-primary text-white rounded-lg hover:shadow-xl hover:shadow-primary/20 transition-all flex items-center gap-2 font-bold">
             Resume
             <span className="material-symbols-outlined text-[18px]">download</span>
           </button>

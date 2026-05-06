@@ -1,10 +1,9 @@
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Hero from './sections/Hero';
-import About from './sections/About';
 import SelectedWork from './sections/SelectedWork';
-import OtherProjectsExperience from './sections/OtherProjectsExperience';
-import Skills from './sections/Skills';
 import AcademicRecord from './sections/AcademicRecord';
+import Skills from './sections/Skills';
 import Contact from './sections/Contact';
 
 export default function App() {
@@ -13,13 +12,12 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <About />
         <SelectedWork />
-        <OtherProjectsExperience />
-        <Skills />
         <AcademicRecord />
+        <Skills />
         <Contact />
       </main>
+      <Footer />
     </>
   );
 }

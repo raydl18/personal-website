@@ -1,76 +1,93 @@
-const education = [
-  {
-    institution: 'Northeastern University',
-    degree: 'Bachelor of Science — Computer Science',
-    period: 'Sep 2025 – Dec 2028',
-    location: 'Boston, MA · Khoury College of Computer Sciences',
-    detail: 'GPA 3.97 · Dean\'s List',
-    certification: 'NU Khoury Odyssey Machine Learning Essentials Certificate',
-    icon: 'school',
-  },
-  {
-    institution: 'De Anza College',
-    degree: 'Computer Science',
-    period: 'Jan 2025 – Jul 2025',
-    location: 'Cupertino, CA',
-    icon: 'account_balance',
-  },
-  {
-    institution: 'Los Altos High School',
-    degree: 'High School Diploma',
-    period: 'Aug 2021 – Jun 2025',
-    location: 'Los Altos, CA',
-    icon: 'emoji_events',
-  },
-];
-
 export default function AcademicRecord() {
   return (
-    <section id="academic" className="py-24 md:py-32 px-6">
-      <div className="max-w-container mx-auto">
-        <p className="font-inter text-xs font-bold text-primary uppercase tracking-widest mb-2">Education</p>
-        <h2 className="font-inter text-4xl md:text-5xl font-bold text-primary tracking-tighter mb-4">
-          Academic Record
-        </h2>
-        <p className="font-newsreader text-lg text-on-surface-variant max-w-xl mb-16 opacity-80">
-          Formal education across three institutions.
-        </p>
+    <section className="py-32 bg-surface-bright">
+      <div className="max-w-[1100px] mx-auto px-6 md:px-12 grid md:grid-cols-3 gap-16 items-center">
 
-        <div className="flex flex-col gap-4">
-          {education.map((edu) => (
-            <div
-              key={edu.institution}
-              className="flex items-start gap-6 p-7 border border-outline-variant/30 bg-white rounded-xl hover:shadow-[2px_3px_0_#c4c6cf] transition-shadow"
-            >
-              <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-surface-container-low rounded-lg border border-outline-variant/20">
-                <span className="material-symbols-outlined text-primary text-[20px]">{edu.icon}</span>
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5 mb-1">
-                  <h3 className="font-inter font-semibold text-on-surface text-base">{edu.institution}</h3>
-                  <span className="font-inter font-bold text-[0.65rem] text-on-surface-variant uppercase tracking-widest flex-shrink-0">
-                    {edu.period}
-                  </span>
-                </div>
-                <p className="font-inter font-semibold text-secondary text-sm mb-1">{edu.degree}</p>
-                {edu.location && (
-                  <p className="font-inter text-[0.75rem] text-outline">{edu.location}</p>
-                )}
-                {edu.detail && (
-                  <p className="font-newsreader text-sm text-on-surface-variant leading-relaxed mt-2">
-                    {edu.detail}
+        <div className="md:col-span-1">
+          <span className="font-inter text-xs font-bold text-outline uppercase tracking-[0.25em]">
+            Foundation
+          </span>
+          <h2 className="font-inter font-bold text-4xl text-primary mt-6">Academic Record</h2>
+        </div>
+
+        <div className="md:col-span-2 p-10 glass-card rounded-3xl border-2 border-primary/5 hover-lift">
+          <div className="space-y-8">
+
+            {/* Northeastern University */}
+            <div className="p-8 bg-white/40 rounded-2xl border border-primary/5">
+              <div className="flex items-center gap-6 mb-6">
+                <span
+                  className="material-symbols-outlined text-4xl text-primary"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  school
+                </span>
+                <div>
+                  <h3 className="font-inter font-bold text-xl text-slate-900">Northeastern University</h3>
+                  <p className="font-inter text-slate-600 text-sm mt-0.5">
+                    B.S. in Computer Science · Class of 2028
                   </p>
-                )}
-                {edu.certification && (
-                  <div className="mt-3 inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low border border-outline-variant/30 rounded font-inter font-bold text-[0.6rem] text-primary uppercase tracking-widest">
-                    <span className="material-symbols-outlined text-[14px]">verified</span>
-                    {edu.certification}
-                  </div>
-                )}
+                </div>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <span className="font-inter text-[10px] font-bold text-primary uppercase tracking-widest block mb-1">
+                    Performance
+                  </span>
+                  <p className="font-inter font-black text-2xl text-primary">3.97 / 4.0 GPA</p>
+                  <p className="font-inter text-xs text-slate-500 mt-0.5">Honors: Dean's List</p>
+                </div>
+                <div>
+                  <span className="font-inter text-[10px] font-bold text-primary uppercase tracking-widest block mb-1">
+                    Key Coursework
+                  </span>
+                  <p className="font-newsreader text-sm text-on-surface-variant leading-relaxed italic">
+                    Linear Algebra, Foundations of Data Science, Object-Oriented Design, Intro to Cybersecurity
+                  </p>
+                </div>
               </div>
             </div>
-          ))}
+
+            {/* De Anza + LAHS */}
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="p-6 bg-white/40 rounded-2xl border border-primary/5">
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="material-symbols-outlined text-3xl text-primary">history_edu</span>
+                  <div>
+                    <h4 className="font-inter font-bold text-slate-900">De Anza College</h4>
+                    <p className="font-inter text-xs text-slate-600">Dual Enrollment · Jan–Jul 2025</p>
+                  </div>
+                </div>
+                <p className="font-newsreader text-sm text-on-surface-variant">
+                  Computer Science coursework, Cupertino, CA
+                </p>
+              </div>
+
+              <div className="p-6 bg-white/40 rounded-2xl border border-primary/5">
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="material-symbols-outlined text-3xl text-primary">workspace_premium</span>
+                  <div>
+                    <h4 className="font-inter font-bold text-slate-900">Los Altos High School</h4>
+                    <p className="font-inter text-xs text-slate-600">Class of 2025</p>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <p className="font-inter font-bold text-sm text-primary">GPA: 4.28 / 4.0</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="font-inter text-[10px] font-bold bg-secondary-container/20 text-secondary px-2 py-0.5 rounded-full">
+                      Varsity Badminton MVP
+                    </span>
+                    <span className="font-inter text-[10px] font-bold bg-secondary-container/20 text-secondary px-2 py-0.5 rounded-full">
+                      Varsity Soccer
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </section>
   );
