@@ -7,10 +7,10 @@ export default function AcademicRecord() {
           <span className="font-inter text-xs font-bold text-outline uppercase tracking-[0.25em]">
             Foundation
           </span>
-          <h2 className="font-inter font-bold text-4xl text-primary mt-6">Academic Record</h2>
+          <h2 className="font-newsreader font-bold text-4xl text-primary mt-6">Academic Record</h2>
         </div>
 
-        <div className="md:col-span-2 p-10 glass-card rounded-3xl border-2 border-primary/5 hover-lift">
+        <div className="md:col-span-2 p-10 glass-card rounded-3xl border border-outline-variant/30 shadow-md">
           <div className="space-y-8">
 
             {/* Northeastern University */}
@@ -23,8 +23,8 @@ export default function AcademicRecord() {
                   school
                 </span>
                 <div>
-                  <h3 className="font-inter font-bold text-xl text-slate-900">Northeastern University</h3>
-                  <p className="font-inter text-slate-600 text-sm mt-0.5">
+                  <h3 className="font-newsreader font-bold text-xl text-slate-900">Northeastern University</h3>
+                  <p className="font-newsreader text-slate-600 text-sm mt-0.5">
                     B.S. in Computer Science · Class of 2028
                   </p>
                 </div>
@@ -54,8 +54,8 @@ export default function AcademicRecord() {
                 <div className="flex items-center gap-4 mb-4">
                   <span className="material-symbols-outlined text-3xl text-primary">history_edu</span>
                   <div>
-                    <h4 className="font-inter font-bold text-slate-900">De Anza College</h4>
-                    <p className="font-inter text-xs text-slate-600">Dual Enrollment · Jan–Jul 2025</p>
+                    <h4 className="font-newsreader font-bold text-slate-900">De Anza College</h4>
+                    <p className="font-newsreader text-xs text-slate-600">Dual Enrollment · Jan–Jul 2025</p>
                   </div>
                 </div>
                 <p className="font-newsreader text-sm text-on-surface-variant">
@@ -67,17 +67,17 @@ export default function AcademicRecord() {
                 <div className="flex items-center gap-4 mb-4">
                   <span className="material-symbols-outlined text-3xl text-primary">workspace_premium</span>
                   <div>
-                    <h4 className="font-inter font-bold text-slate-900">Los Altos High School</h4>
-                    <p className="font-inter text-xs text-slate-600">Class of 2025</p>
+                    <h4 className="font-newsreader font-bold text-slate-900">Los Altos High School</h4>
+                    <p className="font-newsreader text-xs text-slate-600">Class of 2025</p>
                   </div>
                 </div>
                 <div className="space-y-2">
                   <p className="font-inter font-bold text-sm text-primary">GPA: 4.28 / 4.0</p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="font-inter text-[10px] font-bold bg-secondary-container/20 text-secondary px-2 py-0.5 rounded-full">
+                    <span className="font-innewsreaderter text-[10px] font-bold bg-secondary-container/20 text-secondary px-2 py-0.5 rounded-full">
                       Varsity Badminton MVP
                     </span>
-                    <span className="font-inter text-[10px] font-bold bg-secondary-container/20 text-secondary px-2 py-0.5 rounded-full">
+                    <span className="font-newsreader text-[10px] font-bold bg-secondary-container/20 text-secondary px-2 py-0.5 rounded-full">
                       Varsity Soccer
                     </span>
                   </div>

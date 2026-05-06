@@ -15,7 +15,7 @@ export default function Skills() {
             <span className="font-inter text-xs font-bold text-outline uppercase tracking-[0.25em]">
               Toolkit
             </span>
-            <h2 className="font-inter font-bold text-4xl text-primary mt-6">
+            <h2 className="font-newsreader font-bold text-4xl text-primary mt-6">
               Technical Proficiency
             </h2>
             <p className="font-newsreader text-on-surface-variant mt-8 text-lg leading-relaxed">
@@ -33,7 +33,7 @@ export default function Skills() {
                 {languages.map((s) => (
                   <span
                     key={s}
-                    className="px-5 py-2.5 bg-white border border-slate-100 text-slate-800 font-inter font-bold text-sm rounded-xl hover-lift shadow-sm"
+                    className="px-5 py-2.5 bg-white border border-slate-100 text-slate-800 font-newsreader font-bold text-sm rounded-xl hover-lift shadow-sm"
                   >
                     {s}
                   </span>
@@ -48,7 +48,7 @@ export default function Skills() {
                 {tools.map((s) => (
                   <span
                     key={s}
-                    className="px-5 py-2.5 bg-white border border-slate-100 text-slate-800 font-inter font-bold text-sm rounded-xl hover-lift shadow-sm"
+                    className="px-5 py-2.5 bg-white border border-slate-100 text-slate-800 font-newsreader font-bold text-sm rounded-xl hover-lift shadow-sm"
                   >
                     {s}
                   </span>

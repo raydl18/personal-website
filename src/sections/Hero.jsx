@@ -21,11 +21,11 @@ export default function Hero() {
               CS Student @ Northeastern University
             </div>
 
-            <h1 className="font-inter text-6xl md:text-7xl font-bold text-primary tracking-tighter leading-tight">
+            <h1 className="font-newsreader text-6xl md:text-7xl font-bold text-primary tracking-tighter leading-tight">
               Raymond Liu
             </h1>
 
-            <p className="font-inter text-2xl text-on-surface-variant font-medium">
+            <p className="font-newsreader text-2xl text-on-surface-variant font-medium">
               B.S. in Computer Science | GPA: 3.97/4.0
             </p>
 
@@ -66,11 +66,11 @@ export default function Hero() {
 
           {/* Right: photo */}
           <div className="md:col-span-5 relative group">
-            <div className="aspect-[0.85] rounded-2xl overflow-hidden border-[10px] border-white shadow-2xl">
+            <div className="rounded-2xl overflow-hidden border-[18px] border-white shadow-2xl">
               <img
                 src={profilePhoto}
                 alt="Raymond Liu"
-                className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
+                className="w-full h-auto block group-hover:scale-[1.03] transition-transform duration-700"
               />
             </div>
             <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/10 -z-10 rounded-full blur-[80px]"></div>

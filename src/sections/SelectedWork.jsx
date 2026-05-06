@@ -12,7 +12,7 @@ const showcaseProjects = [
       'Logs live game data — goals, cards, player numbers — with auth and persistence. ' +
       'Self-promoted to adoption by Northeastern Intramural Soccer officials.',
     stats: [
-      { label: 'In Progress', sub: 'Google Play Store' },
+      { label: 'In Progress', sub: 'Android Store' },
       { label: 'Production Testing', sub: 'Live Status' },
     ],
     screenshots: [refclockSetup, refclockGame],
@@ -155,7 +155,7 @@ function ShowcaseRow({ proj }) {
   const textEl = (
     <div className="space-y-8">
       <div className="space-y-4">
-        <h3 className="font-inter font-bold text-4xl text-primary tracking-tight">{proj.title}</h3>
+        <h3 className="font-newsreader font-bold text-4xl text-primary tracking-tight">{proj.title}</h3>
         <div className="flex flex-wrap gap-3">
           {proj.tech.map((t) => (
             <span key={t} className="tech-tag">{t}</span>
@@ -170,7 +170,7 @@ function ShowcaseRow({ proj }) {
           <div key={s.label} className="flex gap-6 items-center">
             {i > 0 && <div className="w-px h-12 bg-slate-200" />}
             <div className="flex flex-col">
-              <span className="font-inter font-bold text-primary text-2xl">{s.label}</span>
+              <span className="font-newsreader font-bold text-primary text-2xl">{s.label}</span>
               <span className="font-inter font-bold text-slate-400 text-sm uppercase tracking-widest mt-1">
                 {s.sub}
               </span>
@@ -207,9 +207,9 @@ function OtherCard({ item }) {
             <span className="font-inter text-xs font-bold text-primary uppercase tracking-widest">
               {item.date}
             </span>
-            <h4 className="font-inter text-xl font-bold text-primary mt-1">{item.title}</h4>
+            <h4 className="font-newsreader text-xl font-bold text-primary mt-1">{item.title}</h4>
             {item.org && (
-              <p className="font-inter text-on-surface-variant text-sm font-medium mt-0.5">{item.org}</p>
+              <p className="font-newsreader text-on-surface-variant text-sm font-medium mt-0.5">{item.org}</p>
             )}
           </div>
           <ul className="list-disc list-outside ml-4 space-y-2 text-on-surface-variant text-sm leading-relaxed font-newsreader">
@@ -218,10 +218,10 @@ function OtherCard({ item }) {
         </>
       ) : (
         <>
-          <h4 className="font-inter text-xl font-bold text-primary mb-3 flex items-center gap-3 flex-wrap">
+          <h4 className="font-newsreader text-xl font-bold text-primary mb-3 flex items-center gap-3 flex-wrap">
             {item.title}
             {item.badge && (
-              <span className={`px-2 py-1 font-inter text-[10px] font-black tracking-widest rounded uppercase ${
+              <span className={`px-2 py-1 font-newsreader text-[10px] font-black tracking-widest rounded uppercase ${
                 item.badgeGold
                   ? 'bg-yellow-100 text-yellow-800'
                   : 'bg-surface-container-low text-on-surface-variant'
@@ -231,7 +231,7 @@ function OtherCard({ item }) {
             )}
           </h4>
           {item.subtitle && (
-            <p className={`font-inter text-xs font-bold uppercase tracking-wider mb-3 ${
+            <p className={`font-newsreader text-xs font-bold uppercase tracking-wider mb-3 ${
               item.subtitleBlue ? 'text-secondary' : 'text-on-surface-variant'
             }`}>
               {item.subtitle}
@@ -258,7 +258,7 @@ export default function SelectedWork() {
           <span className="font-inter text-xs font-bold text-primary uppercase tracking-[0.4em]">
             Showcase
           </span>
-          <h2 className="font-inter font-bold text-5xl text-primary mt-6 tracking-tighter">
+          <h2 className="font-newsreader font-bold text-5xl text-primary mt-6 tracking-tighter">
             Selected Engineering Work
           </h2>
           <p className="font-newsreader mt-6 text-on-surface-variant text-lg">
@@ -274,7 +274,7 @@ export default function SelectedWork() {
 
         <div className="mt-32">
           <div className="mb-16 text-center">
-            <h3 className="font-inter font-bold text-3xl text-primary">
+            <h3 className="font-newsreader font-bold text-3xl text-primary">
               Other Projects &amp; Experience
             </h3>
           </div>
