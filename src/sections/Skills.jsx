@@ -15,7 +15,7 @@ export default function Skills() {
             <span className="font-inter text-xs font-bold text-outline uppercase tracking-widest">
               Toolkit
             </span>
-            <h2 className="font-newsreader font-bold text-4xl text-primary mt-6">
+            <h2 className="font-newsreader font-semibold text-4xl text-primary mt-6">
               Technical Proficiency
             </h2>
             <p className="font-newsreader text-on-surface-variant mt-8 text-lg leading-relaxed">

@@ -155,7 +155,7 @@ function ShowcaseRow({ proj }) {
   const textEl = (
     <div className="space-y-8">
       <div className="space-y-4">
-        <h3 className="font-newsreader font-bold text-4xl text-primary tracking-[-0.01em]">{proj.title}</h3>
+        <h3 className="font-newsreader font-semibold text-4xl text-primary tracking-[-0.01em]">{proj.title}</h3>
         <div className="flex flex-wrap gap-3">
           {proj.tech.map((t) => (
             <span key={t} className="tech-tag">{t}</span>
@@ -207,7 +207,7 @@ function OtherCard({ item }) {
             <span className="font-inter text-xs font-bold text-primary uppercase tracking-widest">
               {item.date}
             </span>
-            <h4 className="font-newsreader text-xl font-bold text-primary mt-1">{item.title}</h4>
+            <h4 className="font-newsreader text-xl font-semibold text-primary mt-1">{item.title}</h4>
             {item.org && (
               <p className="font-newsreader text-on-surface-variant text-sm font-medium mt-0.5">{item.org}</p>
             )}
@@ -218,7 +218,7 @@ function OtherCard({ item }) {
         </>
       ) : (
         <>
-          <h4 className="font-newsreader text-xl font-bold text-primary mb-3 flex items-center gap-3 flex-wrap">
+          <h4 className="font-newsreader text-xl font-semibold text-primary mb-3 flex items-center gap-3 flex-wrap">
             {item.title}
             {item.badge && (
               <span className={`px-2 py-1 font-newsreader text-xs font-bold tracking-widest rounded uppercase ${
@@ -274,7 +274,7 @@ export default function SelectedWork() {
 
         <div className="mt-32">
           <div className="mb-16 text-center">
-            <h3 className="font-newsreader font-bold text-3xl text-primary">
+            <h3 className="font-newsreader font-semibold text-3xl text-primary">
               Other Projects &amp; Experience
             </h3>
           </div>

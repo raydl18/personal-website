@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="w-full bg-white border-t border-slate-100 py-16">
       <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between items-center px-6 gap-8">
-        <div className="font-newsreader font-black text-slate-900 text-sm tracking-widest">
+        <div className="font-newsreader font-bold text-slate-900 text-sm tracking-widest">
           © 2026 RAYMOND LIU. BUILT WITH PRECISION.
         </div>
         <div className="flex gap-10 font-newsreader text-xs font-bold uppercase tracking-widest">

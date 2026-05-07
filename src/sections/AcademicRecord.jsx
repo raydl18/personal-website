@@ -7,7 +7,7 @@ export default function AcademicRecord() {
           <span className="font-inter text-xs font-bold text-outline uppercase tracking-widest">
             Foundation
           </span>
-          <h2 className="font-newsreader font-bold text-4xl text-primary mt-6">Academic Record</h2>
+          <h2 className="font-newsreader font-semibold text-4xl text-primary mt-6">Academic Record</h2>
         </div>
 
         <div className="md:col-span-2 p-10 glass-card rounded-3xl border border-outline-variant/30 shadow-md">
@@ -23,7 +23,7 @@ export default function AcademicRecord() {
                   school
                 </span>
                 <div>
-                  <h3 className="font-newsreader font-bold text-xl text-slate-900">Northeastern University</h3>
+                  <h3 className="font-newsreader font-semibold text-xl text-slate-900">Northeastern University</h3>
                   <p className="font-newsreader text-slate-600 text-sm mt-0.5">
                     B.S. in Computer Science · Class of 2028
                   </p>
@@ -34,7 +34,7 @@ export default function AcademicRecord() {
                   <span className="font-inter text-xs font-bold text-primary uppercase tracking-widest block mb-1">
                     Performance
                   </span>
-                  <p className="font-inter font-black text-2xl text-primary">3.97 / 4.0 GPA</p>
+                  <p className="font-inter font-bold text-2xl text-primary">3.97 / 4.0 GPA</p>
                   <p className="font-inter text-xs text-slate-500 mt-0.5">Honors: Dean's List</p>
                 </div>
                 <div>
@@ -54,7 +54,7 @@ export default function AcademicRecord() {
                 <div className="flex items-center gap-4 mb-4">
                   <span className="material-symbols-outlined text-3xl text-primary">history_edu</span>
                   <div>
-                    <h4 className="font-newsreader font-bold text-slate-900">De Anza College</h4>
+                    <h4 className="font-newsreader font-semibold text-slate-900">De Anza College</h4>
                     <p className="font-newsreader text-xs text-slate-600">Dual Enrollment · Jan–Jul 2025</p>
                   </div>
                 </div>
@@ -67,7 +67,7 @@ export default function AcademicRecord() {
                 <div className="flex items-center gap-4 mb-4">
                   <span className="material-symbols-outlined text-3xl text-primary">workspace_premium</span>
                   <div>
-                    <h4 className="font-newsreader font-bold text-slate-900">Los Altos High School</h4>
+                    <h4 className="font-newsreader font-semibold text-slate-900">Los Altos High School</h4>
                     <p className="font-newsreader text-xs text-slate-600">Class of 2025</p>
                   </div>
                 </div>
