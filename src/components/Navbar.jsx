@@ -24,7 +24,7 @@ export default function Navbar() {
       <div className="max-w-[1100px] mx-auto flex justify-between items-center px-6 py-5">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="text-xl font-inter font-bold tracking-tighter text-slate-900 flex items-center gap-2"
+          className="text-xl font-inter font-bold tracking-[-0.01em] text-slate-900 flex items-center gap-2"
         >
           <span className="material-symbols-outlined text-primary text-2xl">code</span>
           Raymond Liu

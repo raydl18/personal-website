@@ -12,7 +12,7 @@ export default function Skills() {
         <div className="grid md:grid-cols-12 gap-20">
 
           <div className="md:col-span-4">
-            <span className="font-inter text-xs font-bold text-outline uppercase tracking-[0.25em]">
+            <span className="font-inter text-xs font-bold text-outline uppercase tracking-widest">
               Toolkit
             </span>
             <h2 className="font-newsreader font-bold text-4xl text-primary mt-6">

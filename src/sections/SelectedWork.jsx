@@ -155,7 +155,7 @@ function ShowcaseRow({ proj }) {
   const textEl = (
     <div className="space-y-8">
       <div className="space-y-4">
-        <h3 className="font-newsreader font-bold text-4xl text-primary tracking-tight">{proj.title}</h3>
+        <h3 className="font-newsreader font-bold text-4xl text-primary tracking-[-0.01em]">{proj.title}</h3>
         <div className="flex flex-wrap gap-3">
           {proj.tech.map((t) => (
             <span key={t} className="tech-tag">{t}</span>
@@ -221,7 +221,7 @@ function OtherCard({ item }) {
           <h4 className="font-newsreader text-xl font-bold text-primary mb-3 flex items-center gap-3 flex-wrap">
             {item.title}
             {item.badge && (
-              <span className={`px-2 py-1 font-newsreader text-[10px] font-black tracking-widest rounded uppercase ${
+              <span className={`px-2 py-1 font-newsreader text-xs font-bold tracking-widest rounded uppercase ${
                 item.badgeGold
                   ? 'bg-yellow-100 text-yellow-800'
                   : 'bg-surface-container-low text-on-surface-variant'
@@ -255,10 +255,10 @@ export default function SelectedWork() {
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
 
         <div className="mb-20 text-center max-w-2xl mx-auto">
-          <span className="font-inter text-xs font-bold text-primary uppercase tracking-[0.4em]">
+          <span className="font-inter text-xs font-bold text-primary uppercase tracking-widest">
             Showcase
           </span>
-          <h2 className="font-newsreader font-bold text-5xl text-primary mt-6 tracking-tighter">
+          <h2 className="font-newsreader font-bold text-5xl text-primary mt-6 tracking-[-0.02em]">
             Selected Engineering Work
           </h2>
           <p className="font-newsreader mt-6 text-on-surface-variant text-lg">

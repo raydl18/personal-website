@@ -4,10 +4,10 @@ export default function Contact() {
       <div className="absolute inset-0 blueprint-grid opacity-[0.05] pointer-events-none" />
       <div className="max-w-[1100px] mx-auto px-6 md:px-12 text-center relative z-10">
 
-        <span className="font-inter text-xs font-bold text-on-primary-container tracking-[0.4em] uppercase opacity-70">
+        <span className="font-inter text-xs font-bold text-on-primary-container tracking-widest uppercase opacity-70">
           Connect
         </span>
-        <h2 className="font-inter font-bold text-5xl md:text-7xl mt-8 leading-tight tracking-tighter">
+        <h2 className="font-inter font-bold text-5xl md:text-7xl mt-8 leading-[1.1] tracking-[-0.02em]">
           Let's build together.
         </h2>
         <p className="font-newsreader text-xl text-on-primary-container mt-10 max-w-2xl mx-auto opacity-80 leading-relaxed">
@@ -35,7 +35,7 @@ export default function Contact() {
             <span className="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">
               terminal
             </span>
-            <span className="font-inter text-[10px] font-bold tracking-widest uppercase">GitHub</span>
+            <span className="font-inter text-xs font-bold tracking-widest uppercase">GitHub</span>
           </a>
           <a
             href="https://linkedin.com/in/raymond-liu18"
@@ -46,7 +46,7 @@ export default function Contact() {
             <span className="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">
               share
             </span>
-            <span className="font-inter text-[10px] font-bold tracking-widest uppercase">LinkedIn</span>
+            <span className="font-inter text-xs font-bold tracking-widest uppercase">LinkedIn</span>
           </a>
         </div>
 

@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="font-inter font-black text-slate-900 text-sm tracking-widest">
           © 2026 RAYMOND LIU. BUILT WITH PRECISION.
         </div>
-        <div className="flex gap-10 font-inter text-[10px] font-bold uppercase tracking-widest">
+        <div className="flex gap-10 font-inter text-xs font-bold uppercase tracking-widest">
           <a
             href="https://github.com/raydl18"
             target="_blank"

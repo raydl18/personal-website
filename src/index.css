@@ -52,10 +52,10 @@ body {
 }
 
 .tech-tag {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   padding: 2px 8px;
   border: 1px solid #c4c6cf;
   border-radius: 4px;

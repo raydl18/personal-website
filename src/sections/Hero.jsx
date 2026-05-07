@@ -21,7 +21,7 @@ export default function Hero() {
               CS Student @ Northeastern University
             </div>
 
-            <h1 className="font-newsreader text-6xl md:text-7xl font-bold text-primary tracking-tighter leading-tight">
+            <h1 className="font-newsreader text-6xl md:text-7xl font-bold text-primary tracking-[-0.02em] leading-[1.1]">
               Raymond Liu
             </h1>
 
