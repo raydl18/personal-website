@@ -28,7 +28,11 @@ export default function Footer() {
           >
             Email
           </a>
-          <a href="#" className="text-slate-400 hover:text-primary transition-colors">
+          <a
+            href="/raymond_liu.pdf"
+            download="Raymond_Liu_Resume.pdf"
+            className="text-slate-400 hover:text-primary transition-colors"
+          >
             Resume
           </a>
         </div>

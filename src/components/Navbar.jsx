@@ -40,10 +40,14 @@ export default function Navbar() {
               {label}
             </button>
           ))}
-          <button className="ml-4 px-6 py-2.5 bg-primary text-white rounded-lg hover:shadow-xl hover:shadow-primary/20 transition-all flex items-center gap-2 font-bold">
+          <a
+            href="/raymond_liu.pdf"
+            download="Raymond_Liu_Resume.pdf"
+            className="ml-4 px-6 py-2.5 bg-primary text-white rounded-lg hover:shadow-xl hover:shadow-primary/20 transition-all flex items-center gap-2 font-bold"
+          >
             Resume
             <span className="material-symbols-outlined text-[18px]">download</span>
-          </button>
+          </a>
         </div>
 
         <button
