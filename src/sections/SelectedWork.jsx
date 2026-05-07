@@ -200,7 +200,7 @@ function ShowcaseRow({ proj }) {
 
 function OtherCard({ item }) {
   return (
-    <div className="p-8 glass-card border border-slate-100 rounded-2xl hover-lift">
+    <div className="p-8 glass-card border border-slate-200 rounded-2xl hover-lift">
       {item.type === 'experience' ? (
         <>
           <div className="mb-4">
