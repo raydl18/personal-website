@@ -5,15 +5,15 @@ import oasisImg from '../assets/oasis.png';
 const showcaseProjects = [
   {
     title: 'RefClock (Mobile App)',
-    tech: ['HTML/CSS', 'JavaScript', 'PWA', 'Google Play'],
+    tech: ['HTML/CSS', 'JavaScript', 'PWA', 'Supabase'],
     description:
-      'A production-ready soccer referee tool built as a Progressive Web App. ' +
+      'A soccer referee tool built as a Progressive Web App. ' +
       'Built with HTML/CSS/JavaScript and published for production on Android/Google Play Store. ' +
       'Logs live game data — goals, cards, player numbers — with auth and persistence. ' +
       'Self-promoted to adoption by Northeastern Intramural Soccer officials.',
     stats: [
-      { label: 'In Progress', sub: 'Android Store' },
-      { label: 'Production Testing', sub: 'Live Status' },
+      { label: 'Published', sub: 'Play Store' },
+      { label: '20+ users', sub: 'Live Status' },
     ],
     screenshots: [refclockSetup, refclockGame],
     imageRight: true,
