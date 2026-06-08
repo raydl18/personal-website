@@ -25,7 +25,7 @@ export default function AcademicRecord() {
                 <div>
                   <h3 className="font-newsreader font-semibold text-xl text-slate-900">Northeastern University</h3>
                   <p className="font-newsreader text-slate-600 text-sm mt-0.5">
-                    B.S. in Computer Science · Class of 2028
+                    B.S. in Computer Science · Class of 2029
                   </p>
                 </div>
               </div>
@@ -35,7 +35,11 @@ export default function AcademicRecord() {
                     Performance
                   </span>
                   <p className="font-inter font-bold text-2xl text-primary">3.97 / 4.0 GPA</p>
-                  <p className="font-inter text-xs text-slate-500 mt-0.5">Honors: Dean's List</p>
+                  <p className="mt-1">
+                    <span className="px-2 py-1 font-inter text-xs font-bold tracking-widest rounded uppercase bg-yellow-100 text-yellow-800">
+                      Dean's List
+                    </span>
+                  </p>
                 </div>
                 <div>
                   <span className="font-inter text-xs font-bold text-primary uppercase tracking-widest block mb-1">
@@ -74,10 +78,10 @@ export default function AcademicRecord() {
                 <div className="space-y-2">
                   <p className="font-inter font-bold text-sm text-primary">GPA: 4.28 / 4.0</p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="font-newsreader text-xs font-bold bg-secondary-container/20 text-secondary px-2 py-0.5 rounded-full">
+                    <span className="font-inter text-xs font-bold bg-secondary-container/20 text-secondary px-2 py-0.5 rounded-full">
                       Varsity Badminton MVP
                     </span>
-                    <span className="font-newsreader text-xs font-bold bg-secondary-container/20 text-secondary px-2 py-0.5 rounded-full">
+                    <span className="font-inter text-xs font-bold bg-secondary-container/20 text-secondary px-2 py-0.5 rounded-full">
                       Varsity Soccer
                     </span>
                   </div>
