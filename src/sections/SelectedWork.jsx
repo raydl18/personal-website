@@ -231,7 +231,7 @@ function OtherCard({ item }) {
             )}
           </h4>
           {item.subtitle && (
-            <p className={`font-newsreader text-xs font-bold uppercase tracking-wider mb-3 ${
+            <p className={`font-newsreader text-xs font-bold uppercase tracking-wider mb-3 [font-optical-sizing:none] ${
               item.subtitleBlue ? 'text-secondary' : 'text-on-surface-variant'
             }`}>
               {item.subtitle}
