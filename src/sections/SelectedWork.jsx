@@ -221,7 +221,7 @@ function OtherCard({ item }) {
           <h4 className="font-newsreader text-xl font-semibold text-primary mb-3 flex items-center gap-3 flex-wrap">
             {item.title}
             {item.badge && (
-              <span className={`px-2 py-1 font-newsreader text-xs font-bold tracking-widest rounded uppercase ${
+              <span className={`px-2 py-1 font-newsreader text-xs font-bold tracking-widest rounded uppercase [font-optical-sizing:none] ${
                 item.badgeGold
                   ? 'bg-yellow-100 text-yellow-800'
                   : 'bg-surface-container-low text-on-surface-variant'
