@@ -1,5 +1,5 @@
 ---
-name: Modern Engineering Portfolio
+name: Technical Blueprint
 colors:
   surface: '#f8f9ff'
   surface-dim: '#cbdbf5'
@@ -10,59 +10,59 @@ colors:
   surface-container-high: '#dce9ff'
   surface-container-highest: '#d3e4fe'
   on-surface: '#0b1c30'
-  on-surface-variant: '#43474e'
+  on-surface-variant: '#44474e'
   inverse-surface: '#213145'
   inverse-on-surface: '#eaf1ff'
   outline: '#74777f'
   outline-variant: '#c4c6cf'
-  surface-tint: '#455f88'
-  primary: '#002045'
+  surface-tint: '#465f87'
+  primary: '#00091b'
   on-primary: '#ffffff'
-  primary-container: '#1a365d'
-  on-primary-container: '#86a0cd'
-  inverse-primary: '#adc7f7'
+  primary-container: '#002045'
+  on-primary-container: '#7089b3'
+  inverse-primary: '#aec7f5'
   secondary: '#3d57b6'
   on-secondary: '#ffffff'
   secondary-container: '#829bfe'
   on-secondary-container: '#082d8d'
-  tertiary: '#1d2123'
+  tertiary: '#06090b'
   on-tertiary: '#ffffff'
-  tertiary-container: '#333638'
-  on-tertiary-container: '#9c9fa1'
+  tertiary-container: '#1d2123'
+  on-tertiary-container: '#85888b'
   error: '#ba1a1a'
   on-error: '#ffffff'
   error-container: '#ffdad6'
   on-error-container: '#93000a'
   primary-fixed: '#d6e3ff'
-  primary-fixed-dim: '#adc7f7'
+  primary-fixed-dim: '#aec7f5'
   on-primary-fixed: '#001b3c'
-  on-primary-fixed-variant: '#2d476f'
-  secondary-fixed: '#dce1ff'
+  on-primary-fixed-variant: '#2e476e'
+  secondary-fixed: '#dde1ff'
   secondary-fixed-dim: '#b7c4ff'
-  on-secondary-fixed: '#001552'
-  on-secondary-fixed-variant: '#213e9d'
+  on-secondary-fixed: '#001452'
+  on-secondary-fixed-variant: '#223e9d'
   tertiary-fixed: '#e0e3e5'
   tertiary-fixed-dim: '#c4c7c9'
-  on-tertiary-fixed: '#191c1e'
-  on-tertiary-fixed-variant: '#444749'
+  on-tertiary-fixed: '#181c1e'
+  on-tertiary-fixed-variant: '#434749'
   background: '#f8f9ff'
   on-background: '#0b1c30'
   surface-variant: '#d3e4fe'
 typography:
   headline-xl:
-    fontFamily: Inter
+    fontFamily: Dm Sans
     fontSize: 48px
     fontWeight: '700'
     lineHeight: '1.1'
     letterSpacing: -0.02em
   headline-lg:
-    fontFamily: Inter
+    fontFamily: Dm Sans
     fontSize: 32px
     fontWeight: '600'
     lineHeight: '1.2'
     letterSpacing: -0.01em
   headline-md:
-    fontFamily: Inter
+    fontFamily: Dm Sans
     fontSize: 24px
     fontWeight: '600'
     lineHeight: '1.3'
@@ -76,23 +76,23 @@ typography:
     fontSize: 17px
     fontWeight: '400'
     lineHeight: '1.6'
+  label-md:
+    fontFamily: Inter
+    fontSize: 14px
+    fontWeight: '500'
+    lineHeight: '1.4'
   label-caps:
     fontFamily: Inter
     fontSize: 12px
     fontWeight: '700'
     lineHeight: '1.5'
     letterSpacing: 0.1em
-  label-md:
-    fontFamily: Inter
-    fontSize: 14px
-    fontWeight: '500'
-    lineHeight: '1.4'
 rounded:
-  sm: 0.125rem
-  DEFAULT: 0.25rem
-  md: 0.375rem
-  lg: 0.5rem
-  xl: 0.75rem
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
   full: 9999px
 spacing:
   container-max: 1100px
@@ -103,64 +103,42 @@ spacing:
 ---
 
 ## Brand & Style
+The brand identity is "Technical Blueprint"—a sophisticated, engineering-focused aesthetic that balances high-utility academic rigor with modern, premium software aesthetics. It targets a professional audience in the technology and recruitment sectors.
 
-This design system is built on the intersection of "Modern Engineering" and "Personal Branding." It moves away from the sterile, overly-templated look of common portfolios by introducing an academic editorial feel combined with the precision of a high-end SaaS product. 
-
-The aesthetic is **Minimalist with Character**, focusing on structural integrity rather than decorative flourish. We use a "Blueprint" approach: everything is aligned to a strict grid, but softened by high-quality typography and tactile depth. The emotional goal is to project competence, intellectual curiosity, and professional reliability. We avoid the "AI-generated" look by shunning neon gradients and excessive glassmorphism in favor of solid surfaces, hair-line borders, and intentional whitespace.
+The visual style is **Corporate Modern with Glassmorphic accents**. It utilizes a clean, "blueprint" grid background to reinforce a sense of precision and construction. The design is characterized by generous whitespace, high-contrast typography, and subtle, layered depth. The emotional response is one of reliability, high intellect, and meticulous craftsmanship.
 
 ## Colors
+The palette is rooted in a deep "Midnight Navy" (`#002045`) which serves as the primary anchor for headlines and interactive elements, conveying authority and stability. 
 
-The palette is anchored by a sophisticated **Slate Navy** (Primary), which provides an authoritative and timeless base. 
-
-- **Primary:** A deep, desaturated navy used for headings, primary buttons, and critical branding elements.
-- **Secondary:** A slightly more vibrant blue used sparingly for interactive states and focus indicators.
-- **Neutral/Background:** The design relies on a tiered system of whites and grays. We use `#FFFFFF` for the main canvas and `#F8FAFC` for container backgrounds to create subtle distinction without harsh lines.
-- **Accents:** Borders use a light gray (`#E2E8F0`) to maintain the "blueprint" feel, while body text uses a deep charcoal (`#1E293B`) for maximum readability.
+A "Cobalt" secondary color provides a bridge to modern software interfaces, while the background uses a very light "Ice Blue" (`#f8f9ff`) to distinguish it from pure white, reducing eye strain while maintaining a clean look. Functional accents like "Success Gold" are used sparingly for achievement callouts.
 
 ## Typography
+The system employs a multi-font strategy to balance character and utility. **DM Sans** is used for headlines, providing a geometric, modern touch that feels both approachable and professional. **Newsreader** is used for narrative and body descriptions to introduce an intellectual, editorial quality that contrasts with the technical surroundings. **Inter** handles all structural, navigational, and technical data, providing a high-performance, utilitarian feel for labels and metadata.
 
-This system employs a high-contrast typographic pairing to balance "Modern Tech" with "Academic Credibility."
-
-- **Headings (Inter):** A functional, neutral sans-serif used for structure. Tight letter-spacing and heavy weights give it a bold, confident presence.
-- **Body Text (Newsreader):** A sophisticated serif used for all long-form content. This adds a "Personal Brand" touch, making the portfolio feel like a curated publication or an engineering journal.
-- **Labels & UI (Inter):** Small caps and medium-weight sans-serifs are used for metadata, tags, and navigation to maintain a technical, organized feel.
+Headlines use tight tracking and aggressive line heights to create a sense of impactful, modern clarity within the corporate framework.
 
 ## Layout & Spacing
+The layout follows a **Fixed Grid** approach with a maximum container width of 1100px to ensure optimal readability on large displays. 
 
-The layout follows a **Fixed-Width Centered Grid** philosophy. Content is contained within a 1100px spine to ensure readability remains high and line lengths for the serif body text stay comfortable.
-
-- **Rhythm:** We use a generous 8rem vertical gap between major sections to allow the design to "breathe" and signal a transition in the narrative.
-- **Grid:** A 12-column structure is used for internal layouts (like project cards), but the overall feel is driven by asymmetrical whitespace—often leaving one or two columns empty on the left to create a sophisticated, editorial look.
+Vertical rhythm is defined by significant "Section Gaps" (128px) that allow each content block to breathe independently. A consistent 8px/16px base unit is used for component internal spacing. Large cards often use asymmetrical grid placements (e.g., 7-column / 5-column splits) to create visual interest.
 
 ## Elevation & Depth
+Depth is created through **Glassmorphism and Tonal Layering** rather than traditional heavy shadows.
 
-We avoid heavy, blurry shadows in favor of **Tonal Layers and Crisp Outlines**.
-
-- **Surface Levels:** The base background is white. Cards and containers use a very subtle light-gray background (`#F8FAFC`) with a 1px border (`#E2E8F0`).
-- **Refined Shadows:** When depth is required (e.g., a card on hover), use a "High-End Print" shadow: a very sharp, low-opacity offset shadow that mimics a physical object sitting just millimeters off a page. 
-- **Micro-interactions:** Elevation is primarily communicated through subtle shifts in border color or background tone rather than dramatic movement.
+1.  **Level 0 (Base):** Light blue background with a 40px radial blueprint grid.
+2.  **Level 1 (Cards):** Semi-transparent white surfaces (`rgba(255, 255, 255, 0.75)`) with a 12px backdrop blur and 1px soft borders.
+3.  **Level 2 (Active/Hover):** "Hover-lift" effect where elements translate -12px on the Y-axis and gain a diffused, low-opacity shadow (`rgba(0, 32, 69, 0.12)`).
 
 ## Shapes
-
-The shape language is disciplined and professional. We use **Soft (0.25rem)** roundedness to move away from the "bubbly" feel of consumer apps toward something more architectural.
-
-- **Standard Elements:** Buttons and input fields use a 4px (0.25rem) radius.
-- **Featured Elements:** Larger cards or project images can use a 8px (0.5rem) radius to soften the visual impact of large containers.
-- **Strict Adherence:** No pill shapes are permitted. All buttons are rectangular with soft corners to maintain the "Engineering" aesthetic.
+The shape language uses high-radius curves to soften the technical precision of the grid. Standard components use an 8px (0.5rem) radius. Large container cards and image wraps utilize much more aggressive "Oversized" rounding (up to 48px/3rem) to create a friendly, modern tech feel. "Capsule" shapes are reserved strictly for status indicators and decorative tags.
 
 ## Components
 
-### Buttons
-Primary buttons use the Slate Navy background with white Inter typography. No gradients. Secondary buttons use a transparent background with a 1px border and a subtle gray hover state. 
-
-### Cards
-Cards are the primary vehicle for projects and experience. They should feature a 1px border and ample internal padding (2rem). Use the `label-caps` style for dates or categories at the top of the card to create a clear information hierarchy.
-
-### Chips / Tags
-Tags for tech stacks (e.g., "React", "Python") should be small, light gray backgrounds with `label-md` text. They should have sharp corners or the minimum 2px radius.
-
-### Input Fields
-Inputs follow the same logic as buttons: 1px borders, white backgrounds, and clear, high-contrast labels. Use the Slate Navy for the focus state border to provide a strong visual cue.
-
-### Signature Component: The "Timeline"
-For the experience section, use a vertical "hairline" stroke to connect roles, utilizing the Slate Navy for the dots/markers to emphasize the chronological progression of the engineering career.
+-   **Buttons:** Primary buttons are solid Midnight Navy with bold white Inter text. Hover states should include a subtle lift and an expanded shadow. Secondary buttons use a thick 2px border with transparent backgrounds.
+-   **Tech Tags:** Small, capsule-shaped labels with 1px borders and uppercase bold text. These use a semi-transparent background to blend with the card they sit on.
+-   **Cards:** Three variants:
+    1.  **Glass Card:** Blurred background, used for informational blocks.
+    2.  **Container Card:** Solid light-blue fill, used for large project showcases.
+    3.  **Outline Card:** Transparent with a subtle border, used for lower-hierarchy items.
+-   **Icons:** Use "Material Symbols Outlined" with a consistent weight of 400. In primary contexts, they should be colored in the primary navy or secondary cobalt.
+-   **Navigation:** A sticky top bar with a high blur (backdrop-filter) and a very thin bottom border to separate it from the content without adding visual bulk.
