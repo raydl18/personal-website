@@ -1,61 +1,58 @@
-const languages = ['Java', 'Python', 'JavaScript', 'TypeScript', 'C/C++', 'HTML/CSS', 'SQL'];
+import Reveal from '../components/Reveal';
 
-const tools = [
-  'Spring Boot', 'React', 'Next.js', 'Supabase', 'PostgreSQL',
-  'Firebase', 'NumPy', 'Pandas', 'Matplotlib', 'Git', 'Linux/Ubuntu',
+const groups = [
+  {
+    title: 'Languages',
+    items: ['Java', 'Python', 'JavaScript', 'TypeScript', 'C/C++', 'HTML/CSS', 'SQL'],
+  },
+  {
+    title: 'Developer Tools',
+    items: ['Git', 'VS Code', 'Eclipse', 'Gradle', 'PostgreSQL', 'Node.js', 'Vercel', 'Linux/Ubuntu', 'Claude Code'],
+  },
+  {
+    title: 'Libraries & Frameworks',
+    items: ['Spring Boot', 'React', 'Next.js', 'Tailwind CSS', 'JUnit', 'Jackson', 'NumPy', 'Pandas', 'BeautifulSoup'],
+  },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-32 bg-slate-50 blueprint-grid">
-      <div className="max-w-[1100px] mx-auto px-6 md:px-12">
-        <div className="grid md:grid-cols-12 gap-20">
+    <section id="skills" className="py-24 md:py-32 bg-white blueprint-grid">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
 
-          <div className="md:col-span-4">
-            <span className="font-inter text-xs font-bold text-outline uppercase tracking-widest">
-              Toolkit
+          <Reveal className="lg:col-span-4">
+            <span className="font-inter text-[11px] font-bold text-slate-400 uppercase tracking-[0.3em]">
+              Technical Skills
             </span>
-            <h2 className="font-newsreader font-semibold text-4xl text-primary mt-6">
+            <h2 className="font-newsreader font-semibold text-3xl md:text-4xl text-primary mt-6 tracking-[-0.01em]">
               Technical Proficiency
             </h2>
-            <p className="font-newsreader text-on-surface-variant mt-8 text-lg leading-relaxed">
-              Built on a foundation of low-level fundamentals, now specialized in building
-              modern cloud-native applications.
+            <p className="font-inter text-sm text-slate-500 mt-6 leading-relaxed max-w-xs">
+              A focused toolkit specializing in robust backends, reactive frontends, and precise
+              system design.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="md:col-span-8 grid gap-12">
-            <div className="space-y-6">
-              <h4 className="font-inter font-bold text-xs text-primary uppercase tracking-widest border-b border-slate-200 pb-3">
-                Languages
-              </h4>
-              <div className="flex flex-wrap gap-4">
-                {languages.map((s) => (
-                  <span
-                    key={s}
-                    className="px-5 py-2.5 bg-white border border-slate-100 text-slate-800 font-newsreader font-bold text-sm rounded-xl hover-lift shadow-sm"
-                  >
-                    {s}
-                  </span>
-                ))}
+          <Reveal className="lg:col-span-8 space-y-10 md:space-y-12" delay={80}>
+            {groups.map((group) => (
+              <div key={group.title} className="space-y-4">
+                <h4 className="font-inter text-[10px] font-bold text-primary uppercase tracking-[0.15em] border-b border-slate-100 pb-2">
+                  {group.title}
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-inter font-bold text-xs rounded hover:bg-white hover:border-slate-200 transition-colors"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="space-y-6">
-              <h4 className="font-inter font-bold text-xs text-primary uppercase tracking-widest border-b border-slate-200 pb-3">
-                Tools &amp; Libs
-              </h4>
-              <div className="flex flex-wrap gap-4">
-                {tools.map((s) => (
-                  <span
-                    key={s}
-                    className="px-5 py-2.5 bg-white border border-slate-100 text-slate-800 font-newsreader font-bold text-sm rounded-xl hover-lift shadow-sm"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+            ))}
+          </Reveal>
 
         </div>
       </div>
