@@ -1,11 +1,28 @@
 import Reveal from '../components/Reveal';
-import refclock1 from '../assets/refclock-pictures/refclock1.png';
-import refclock2 from '../assets/refclock-pictures/refclock2.png';
-import refclock3 from '../assets/refclock-pictures/refclock3.png';
-import kellyLiuImg from '../assets/kellyliuadvisory-pictures/kellyliuadvisory-picture.png';
+import ProjectViewer from '../components/ProjectViewer';
+import kellyHome from '../assets/kellyliuadvisory-pictures/kellyliuadvisory-picture.png';
+import kellyContact from '../assets/kellyliuadvisory-pictures/kellyliuadvisory-contact-page.png';
 import actImg from '../assets/act-acupuncture-picture.png';
-import oasisImg from '../assets/chapters-pictures/chapters-discover.png';
-import plantImg from '../assets/plant-pictures/plant2.png';
+
+// Multi-screenshot folders: loaded dynamically and sorted by filename so
+// new screenshots dropped in are picked up automatically.
+const toSorted = (mods) =>
+  Object.entries(mods)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([, src]) => src);
+
+const refclockShots = toSorted(
+  import.meta.glob('../assets/refclock-pictures/*.{png,jpg,jpeg}', { eager: true, import: 'default' }),
+);
+const chaptersShots = toSorted(
+  import.meta.glob('../assets/chapters-pictures/*.{png,jpg,jpeg}', { eager: true, import: 'default' }),
+);
+const plantShots = toSorted(
+  import.meta.glob('../assets/plant-pictures/*.{png,jpg,jpeg}', { eager: true, import: 'default' }),
+);
+
+const kellyShots = [kellyHome, kellyContact];
+const actShots = [actImg];
 
 const toneClasses = {
   navy: 'bg-primary/5 text-primary border-primary/10',
@@ -43,30 +60,6 @@ function Bullets({ items }) {
   );
 }
 
-/** A deployed site shown inside a minimal browser mock. */
-function BrowserFrame({ src, alt, handle, aspect = 'aspect-video' }) {
-  return (
-    <div className="group relative rounded overflow-hidden border border-slate-200 bg-white shadow-sm">
-      <div className="flex items-center gap-1.5 px-4 py-3 border-b border-slate-100 bg-slate-50/80">
-        <span className="w-2.5 h-2.5 rounded-full bg-slate-200" aria-hidden="true" />
-        <span className="w-2.5 h-2.5 rounded-full bg-slate-200" aria-hidden="true" />
-        <span className="w-2.5 h-2.5 rounded-full bg-slate-200" aria-hidden="true" />
-        <span className="ml-3 flex-1 max-w-[240px] h-6 rounded-full bg-white border border-slate-200 flex items-center gap-1.5 px-3">
-          <span className="material-symbols-outlined text-[13px] text-slate-400" aria-hidden="true">lock</span>
-          <span className="font-inter text-[11px] text-slate-400 truncate">{handle}</span>
-        </span>
-      </div>
-      <div className={`relative ${aspect} overflow-hidden bg-slate-50`}>
-        <img
-          src={src}
-          alt={alt}
-          className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
-        />
-      </div>
-    </div>
-  );
-}
-
 export default function SelectedWork() {
   return (
     <section id="projects" className="py-24 md:py-32 bg-slate-50 overflow-hidden">
@@ -83,23 +76,16 @@ export default function SelectedWork() {
 
         <div className="space-y-24 md:space-y-32">
 
-          {/* 1 — RefClock (image left) */}
+          {/* 1 — RefClock (viewer left) */}
           <Reveal className="grid lg:grid-cols-10 gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-6 order-1">
-              <div className="bg-slate-900 p-6 md:p-8 rounded shadow-2xl flex gap-6 overflow-x-auto scrollbar-hide snap-x border border-slate-800">
-                {[
-                  { src: refclock1, alt: 'RefClock match setup screen' },
-                  { src: refclock2, alt: 'RefClock live match timer and score' },
-                  { src: refclock3, alt: 'RefClock final whistle and match summary' },
-                ].map((shot) => (
-                  <img
-                    key={shot.alt}
-                    src={shot.src}
-                    alt={shot.alt}
-                    className="h-72 md:h-80 w-auto rounded shadow-lg snap-center object-contain shrink-0"
-                  />
-                ))}
-              </div>
+              <ProjectViewer
+                shots={refclockShots}
+                label="RefClock"
+                alt="RefClock app"
+                frame="phone"
+                viewport="h-[420px] md:h-[460px]"
+              />
             </div>
             <div className="lg:col-span-4 order-2 space-y-6">
               <div className="space-y-3">
@@ -116,7 +102,7 @@ export default function SelectedWork() {
             </div>
           </Reveal>
 
-          {/* 2 — Kelly Liu Advisory (image right) */}
+          {/* 2 — Kelly Liu Advisory (viewer right) */}
           <Reveal className="grid lg:grid-cols-10 gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-4 order-2 lg:order-1 space-y-6">
               <div className="space-y-3">
@@ -131,7 +117,7 @@ export default function SelectedWork() {
               />
             </div>
             <div className="lg:col-span-6 order-1 lg:order-2">
-              <BrowserFrame src={kellyLiuImg} alt="Kelly Liu Advisory marketing site" handle="kelly liu advisory" />
+              <ProjectViewer shots={kellyShots} label="kelly liu advisory" alt="Kelly Liu Advisory site" />
             </div>
           </Reveal>
 
@@ -140,7 +126,7 @@ export default function SelectedWork() {
 
             {/* 3 — ACT Acupuncture */}
             <Reveal className="space-y-8">
-              <BrowserFrame src={actImg} alt="ACT Acupuncture marketing site" handle="act acupuncture" aspect="aspect-[4/5]" />
+              <ProjectViewer shots={actShots} label="act acupuncture" alt="ACT Acupuncture site" viewport="aspect-[4/5]" />
               <div className="space-y-4">
                 <div className="flex justify-between items-start gap-4">
                   <h3 className="font-newsreader font-semibold text-2xl md:text-3xl text-primary">ACT Acupuncture</h3>
@@ -161,7 +147,7 @@ export default function SelectedWork() {
 
               {/* 4 — Oasis Club */}
               <Reveal className="space-y-6">
-                <BrowserFrame src={oasisImg} alt="Oasis Club book-tracking app" handle="oasis club" />
+                <ProjectViewer shots={chaptersShots} label="oasis club" alt="Oasis Club book-tracking app" />
                 <div className="space-y-3">
                   <h3 className="font-newsreader font-semibold text-2xl md:text-3xl text-primary">Oasis Club @ NEU</h3>
                   <TechTags items={['React', 'Zustand', 'Supabase', 'PostgreSQL']} />
@@ -176,7 +162,7 @@ export default function SelectedWork() {
 
               {/* 5 — Plant */}
               <Reveal className="space-y-6">
-                <BrowserFrame src={plantImg} alt="Plant academic-planning dashboard" handle="plant" />
+                <ProjectViewer shots={plantShots} label="plant" alt="Plant academic-planning app" />
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 flex-wrap">
                     <h3 className="font-newsreader font-semibold text-2xl md:text-3xl text-primary">Plant</h3>
