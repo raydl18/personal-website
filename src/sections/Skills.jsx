@@ -7,7 +7,7 @@ const groups = [
   },
   {
     title: 'Developer Tools',
-    items: ['Git', 'VS Code', 'Eclipse', 'Gradle', 'PostgreSQL', 'Node.js', 'Vercel', 'Linux/Ubuntu', 'Claude Code'],
+    items: ['Git', 'VS Code', 'Eclipse', 'Gradle', 'PostgreSQL', 'Supabase', 'Firebase', 'Node.js', 'Vercel', 'Linux/Ubuntu', 'Claude Code'],
   },
   {
     title: 'Libraries & Frameworks',

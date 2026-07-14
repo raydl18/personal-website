@@ -52,8 +52,8 @@ export default function Hero() {
 
             <p className="font-newsreader text-lg md:text-xl text-on-surface/80 max-w-xl leading-relaxed">
               A software developer who builds purposeful tools and ships them. Currently maintaining
-              a 3.97 GPA at Northeastern while developing production applications for campus
-              organizations and independent clients.
+              a high academic standing at Northeastern while developing production applications for campus
+              organizations and personal ventures.
             </p>
 
             <div className="flex flex-wrap gap-4">
