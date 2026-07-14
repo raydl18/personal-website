@@ -1,97 +1,76 @@
+import Reveal from '../components/Reveal';
+
+const coursework = 'Linear Algebra, Foundations of Data Science, Object-Oriented Design, Intro to Cybersecurity';
+
 export default function AcademicRecord() {
   return (
-    <section className="py-32 bg-surface-bright">
-      <div className="max-w-[1100px] mx-auto px-6 md:px-12 grid md:grid-cols-3 gap-16 items-center">
+    <section id="education" className="py-24 md:py-32 bg-slate-50 border-t border-slate-100">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
 
-        <div className="md:col-span-1">
-          <span className="font-inter text-xs font-bold text-outline uppercase tracking-widest">
-            Foundation
-          </span>
-          <h2 className="font-newsreader font-semibold text-4xl text-primary mt-6">Academic Record</h2>
-        </div>
+          <Reveal className="lg:col-span-4">
+            <span className="font-inter text-[11px] font-bold text-slate-400 uppercase tracking-[0.3em]">
+              Academic Record
+            </span>
+            <h2 className="font-newsreader font-semibold text-3xl md:text-4xl text-primary mt-6 tracking-[-0.01em]">
+              Foundation
+            </h2>
+            <p className="font-inter text-sm text-slate-500 mt-6 leading-relaxed max-w-xs">
+              A rigorous academic background focused on computer science fundamentals and continuous
+              learning.
+            </p>
+          </Reveal>
 
-        <div className="md:col-span-2 p-10 glass-card rounded-3xl border border-outline-variant/30 shadow-md">
-          <div className="space-y-8">
+          <Reveal className="lg:col-span-8 grid md:grid-cols-2 gap-10 md:gap-12" delay={80}>
 
-            {/* Northeastern University */}
-            <div className="p-8 bg-white/40 rounded-2xl border border-primary/5">
-              <div className="flex items-center gap-6 mb-6">
-                <span
-                  className="material-symbols-outlined text-4xl text-primary"
-                  style={{ fontVariationSettings: "'FILL' 1" }}
-                >
-                  school
-                </span>
-                <div>
-                  <h3 className="font-newsreader font-semibold text-xl text-slate-900">Northeastern University</h3>
-                  <p className="font-newsreader text-slate-600 text-sm mt-0.5">
-                    B.S. in Computer Science · Class of 2029
+            {/* Featured: Northeastern */}
+            <div className="resume-border resume-dot">
+              <h3 className="font-newsreader font-semibold text-2xl text-primary">Northeastern University</h3>
+              <p className="font-inter text-sm font-bold text-slate-800 mt-1">B.S. in Computer Science</p>
+              <p className="font-inter text-sm text-slate-500 font-medium mt-0.5">Class of 2029 · Boston, MA</p>
+              <div className="mt-4 space-y-3">
+                <div className="flex items-center flex-wrap gap-2.5">
+                  <p className="font-inter text-[13px] text-slate-600">
+                    <span className="font-bold text-primary">GPA:</span> 3.97 / 4.0
                   </p>
-                </div>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <span className="font-inter text-xs font-bold text-primary uppercase tracking-widest block mb-1">
-                    Performance
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full border border-yellow-200 bg-yellow-100 text-yellow-800 font-inter text-[10px] font-bold uppercase tracking-widest">
+                    Dean&apos;s List
                   </span>
-                  <p className="font-inter font-bold text-2xl text-primary">3.97 / 4.0 GPA</p>
-                  <p className="mt-1">
-                    <span className="px-2 py-1 font-inter text-xs font-bold tracking-widest rounded uppercase bg-yellow-100 text-yellow-800">
-                      Dean's List
-                    </span>
-                  </p>
                 </div>
-                <div>
-                  <span className="font-inter text-xs font-bold text-primary uppercase tracking-widest block mb-1">
-                    Key Coursework
-                  </span>
-                  <p className="font-newsreader text-sm text-on-surface-variant leading-relaxed italic">
-                    Linear Algebra, Foundations of Data Science, Object-Oriented Design, Intro to Cybersecurity
-                  </p>
-                </div>
+                <p className="font-inter text-[13px] text-slate-600 leading-relaxed">
+                  <span className="font-bold text-slate-800">Coursework:</span> {coursework}
+                </p>
               </div>
             </div>
 
-            {/* De Anza + LAHS */}
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="p-6 bg-white/40 rounded-2xl border border-primary/5">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="material-symbols-outlined text-3xl text-primary">history_edu</span>
-                  <div>
-                    <h4 className="font-newsreader font-semibold text-slate-900">De Anza College</h4>
-                    <p className="font-newsreader text-xs text-slate-600">Dual Enrollment · Jan–Jul 2025</p>
-                  </div>
-                </div>
-                <p className="font-newsreader text-sm text-on-surface-variant">
-                  Computer Science coursework, Cupertino, CA
+            {/* Secondary: De Anza + Los Altos HS */}
+            <div className="space-y-10">
+              <div className="resume-border">
+                <h3 className="font-newsreader font-semibold text-xl text-primary">De Anza College</h3>
+                <p className="font-inter text-xs text-slate-500 font-medium mt-1">Dual Enrollment · Jan–Jul 2025</p>
+                <p className="font-inter text-[13px] text-slate-600 mt-2 leading-relaxed">
+                  Computer Science coursework (22.5 units) · Cupertino, CA
                 </p>
               </div>
 
-              <div className="p-6 bg-white/40 rounded-2xl border border-primary/5">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="material-symbols-outlined text-3xl text-primary">workspace_premium</span>
-                  <div>
-                    <h4 className="font-newsreader font-semibold text-slate-900">Los Altos High School</h4>
-                    <p className="font-newsreader text-xs text-slate-600">Class of 2025</p>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <p className="font-inter font-bold text-sm text-primary">GPA: 4.28 / 4.0</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="font-inter text-xs font-bold bg-secondary-container/20 text-secondary px-2 py-0.5 rounded-full">
-                      Varsity Badminton MVP
-                    </span>
-                    <span className="font-inter text-xs font-bold bg-secondary-container/20 text-secondary px-2 py-0.5 rounded-full">
-                      Varsity Soccer
-                    </span>
-                  </div>
+              <div className="resume-border">
+                <h3 className="font-newsreader font-semibold text-xl text-primary">Los Altos High School</h3>
+                <p className="font-inter text-xs text-slate-500 font-medium mt-1">Class of 2025 · Los Altos, CA</p>
+                <p className="font-inter text-[13px] font-bold text-slate-800 mt-2">GPA: 4.28 / 4.0</p>
+                <div className="flex flex-wrap gap-2 mt-3">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary font-inter text-[10px] font-bold uppercase tracking-wide">
+                    Varsity Badminton MVP
+                  </span>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary font-inter text-[10px] font-bold uppercase tracking-wide">
+                    Varsity Soccer
+                  </span>
                 </div>
               </div>
             </div>
 
-          </div>
-        </div>
+          </Reveal>
 
+        </div>
       </div>
     </section>
   );

@@ -65,6 +65,23 @@ body {
   display: inline-block;
 }
 
+.resume-border {
+  border-left: 2px solid #e2e8f0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.resume-dot::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background: #002045;
+  border-radius: 9999px;
+}
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
