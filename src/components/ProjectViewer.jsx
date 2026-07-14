@@ -34,7 +34,7 @@ export default function ProjectViewer({ shots, label, alt, frame = 'browser', vi
       {/* Chrome / label bar */}
       {isPhone ? (
         <div className="flex items-center justify-center py-3 border-b border-slate-800">
-          <span className="font-inter text-[11px] font-bold uppercase tracking-widest text-slate-400">
+          <span className="font-dmsans text-[11px] font-bold uppercase tracking-widest text-slate-400">
             {label}
           </span>
         </div>
@@ -45,7 +45,7 @@ export default function ProjectViewer({ shots, label, alt, frame = 'browser', vi
           <span className="w-2.5 h-2.5 rounded-full bg-slate-200" aria-hidden="true" />
           <span className="ml-3 flex-1 max-w-[240px] h-6 rounded-full bg-white border border-slate-200 flex items-center gap-1.5 px-3">
             <span className="material-symbols-outlined text-[13px] text-slate-400" aria-hidden="true">lock</span>
-            <span className="font-inter text-[11px] text-slate-400 truncate">{label}</span>
+            <span className="font-dmsans text-[11px] text-slate-400 truncate">{label}</span>
           </span>
         </div>
       )}

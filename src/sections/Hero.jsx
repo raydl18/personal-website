@@ -36,7 +36,7 @@ export default function Hero() {
           {/* Left: text */}
           <div className="lg:col-span-7 space-y-8 lg:space-y-10">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 text-primary font-inter text-[11px] font-bold uppercase tracking-[0.15em] rounded shadow-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 text-primary font-dmsans text-[11px] font-bold uppercase tracking-[0.15em] rounded shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true"></span>
                 Computer Science · Northeastern University
               </div>
@@ -50,7 +50,7 @@ export default function Hero() {
               </p>
             </div>
 
-            <p className="font-newsreader text-lg md:text-xl text-on-surface/80 max-w-xl leading-relaxed">
+            <p className="font-dmsans text-lg text-on-surface-variant max-w-xl leading-relaxed">
               A software developer who builds purposeful tools and ships them. Currently maintaining
               a high academic standing at Northeastern while developing production applications for campus
               organizations and personal ventures.
@@ -59,7 +59,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="mailto:liu.raymon@northeastern.edu"
-                className="inline-flex items-center gap-2.5 px-6 py-3 bg-primary text-white font-inter font-bold text-sm rounded hover:bg-slate-800 transition-all shadow-lg shadow-primary/10 active:translate-y-px"
+                className="inline-flex items-center gap-2.5 px-6 py-3 bg-primary text-white font-dmsans font-bold text-sm rounded hover:bg-slate-800 transition-all shadow-lg shadow-primary/10 active:translate-y-px"
               >
                 <span className="material-symbols-outlined text-[20px]" aria-hidden="true">mail</span>
                 Email Me
@@ -68,7 +68,7 @@ export default function Hero() {
                 href="https://github.com/raydl18"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3 border border-slate-200 bg-white text-primary font-inter font-bold text-sm rounded hover:bg-slate-50 hover:border-slate-300 transition-all active:translate-y-px"
+                className="inline-flex items-center gap-2.5 px-6 py-3 border border-slate-200 bg-white text-primary font-dmsans font-bold text-sm rounded hover:bg-slate-50 hover:border-slate-300 transition-all active:translate-y-px"
               >
                 <GitHubIcon className="w-[18px] h-[18px]" />
                 GitHub
@@ -77,7 +77,7 @@ export default function Hero() {
                 href="https://linkedin.com/in/raymond-liu18"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3 border border-slate-200 bg-white text-primary font-inter font-bold text-sm rounded hover:bg-slate-50 hover:border-slate-300 transition-all active:translate-y-px"
+                className="inline-flex items-center gap-2.5 px-6 py-3 border border-slate-200 bg-white text-primary font-dmsans font-bold text-sm rounded hover:bg-slate-50 hover:border-slate-300 transition-all active:translate-y-px"
               >
                 <LinkedInIcon className="w-[18px] h-[18px]" />
                 LinkedIn

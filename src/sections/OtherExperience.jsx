@@ -44,15 +44,15 @@ function ExperienceItem({ item, delay }) {
     <Reveal delay={delay}>
       <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1 md:gap-4">
         <h3 className="font-newsreader font-semibold text-xl md:text-2xl text-primary">{item.title}</h3>
-        <span className="font-inter text-xs font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">
+        <span className="font-dmsans text-xs font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">
           {item.date}
         </span>
       </div>
       {item.org && (
-        <p className="font-inter text-xs font-medium text-slate-500 mt-2">{item.org}</p>
+        <p className="font-dmsans text-xs font-medium text-slate-500 mt-2">{item.org}</p>
       )}
       {item.skills && (
-        <p className="font-inter text-xs font-bold text-secondary uppercase tracking-wide mt-2">{item.skills}</p>
+        <p className="font-dmsans text-xs font-bold text-secondary uppercase tracking-wide mt-2">{item.skills}</p>
       )}
       <ul className="list-disc list-outside ml-4 space-y-2.5 text-[14px] text-slate-600 leading-relaxed mt-4">
         {item.bullets.map((b, i) => (
@@ -68,7 +68,7 @@ export default function OtherExperience() {
     <section id="experience" className="py-24 md:py-32 bg-white border-y border-slate-100">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         <Reveal className="mb-14 md:mb-16">
-          <span className="font-inter text-[11px] font-bold text-slate-400 uppercase tracking-[0.3em]">
+          <span className="font-dmsans text-[11px] font-bold text-slate-400 uppercase tracking-[0.3em]">
             Additional Impact
           </span>
           <h2 className="font-newsreader font-semibold text-3xl md:text-4xl text-primary mt-6 tracking-[-0.01em]">

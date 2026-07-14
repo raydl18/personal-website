@@ -18,7 +18,7 @@ body {
   font-synthesis: none;
   background-color: #f8f9ff;
   color: #0b1c30;
-  font-family: 'Newsreader', serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .blueprint-grid {
@@ -52,7 +52,7 @@ body {
 }
 
 .tech-tag {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;

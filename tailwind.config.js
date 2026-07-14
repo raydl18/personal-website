@@ -45,7 +45,8 @@ export default {
         'on-background': '#0b1c30',
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
+        sans: ['DM Sans', 'sans-serif'],
+        dmsans: ['DM Sans', 'sans-serif'],
         newsreader: ['Newsreader', 'serif'],
       },
       maxWidth: {

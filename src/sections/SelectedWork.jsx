@@ -33,7 +33,7 @@ const toneClasses = {
 function StatusChip({ tone = 'navy', children }) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border font-inter text-[10px] font-bold uppercase tracking-widest ${toneClasses[tone]}`}
+      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border font-dmsans text-[10px] font-bold uppercase tracking-widest ${toneClasses[tone]}`}
     >
       {children}
     </span>
@@ -66,7 +66,7 @@ export default function SelectedWork() {
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
 
         <Reveal className="mb-16 md:mb-24 text-center max-w-2xl mx-auto">
-          <span className="font-inter text-[11px] font-bold text-primary uppercase tracking-[0.4em]">
+          <span className="font-dmsans text-[11px] font-bold text-primary uppercase tracking-[0.4em]">
             Selected Engineering Work
           </span>
           <h2 className="font-newsreader font-semibold text-4xl md:text-5xl text-primary mt-6 tracking-[-0.02em]">
@@ -169,7 +169,7 @@ export default function SelectedWork() {
                     <StatusChip tone="gold">Hackathon Winner</StatusChip>
                   </div>
                   <TechTags items={['Next.js', 'React', 'TypeScript', 'Python']} />
-                  <p className="font-inter text-[13px] font-bold text-slate-800">NUACM Hackathon — Education Track Winner</p>
+                  <p className="font-dmsans text-[13px] font-bold text-slate-800">NUACM Hackathon — Education Track Winner</p>
                   <Bullets
                     items={[
                       'Built a Next.js app that helps students plan academic schedules with AI-powered course recommendations',

@@ -28,7 +28,7 @@ export default function Navbar() {
           Raymond Liu
         </button>
 
-        <div className="hidden md:flex gap-10 items-center font-inter text-[13px] font-semibold uppercase tracking-wider">
+        <div className="hidden md:flex gap-10 items-center font-dmsans text-[13px] font-semibold uppercase tracking-wider">
           {navLinks.map(({ label, id }) => (
             <button
               key={id}
@@ -56,7 +56,7 @@ export default function Navbar() {
             <button
               key={id}
               onClick={() => scrollTo(id)}
-              className="text-slate-700 font-inter font-semibold text-sm text-left uppercase tracking-wider"
+              className="text-slate-700 font-dmsans font-semibold text-sm text-left uppercase tracking-wider"
             >
               {label}
             </button>
