@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Raymond Liu | Software Developer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Dm+Sans:wght@400;500;700&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00091b",
+                        "on-surface": "#0b1c30",
+                        "on-surface-variant": "#44474e",
+                        "surface-bright": "#f8f9ff",
+                        "outline-variant": "#c4c6cf",
+                        "secondary": "#3d57b6",
+                        "surface-container": "#e5eeff",
+                        "surface-container-low": "#eff4ff",
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"],
+                    },
+                    fontSize: {
+                        "display": ["64px", {lineHeight: "1.1", letterSpacing: "-0.03em", fontWeight: "600"}],
+                        "h1": ["48px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "600"}],
+                        "h2": ["32px", {lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "600"}],
+                        "h3": ["24px", {lineHeight: "1.3", fontWeight: "600"}],
+                        "body-lg": ["18px", {lineHeight: "1.6"}],
+                        "body-md": ["15px", {lineHeight: "1.6"}],
+                        "label-caps": ["11px", {lineHeight: "1.5", letterSpacing: "0.15em", fontWeight: "700"}]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #f8f9ff;
+            color: #0b1c30;
+        }
+        .blueprint-grid {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0, 32, 69, 0.08);
+        }
+        .tech-tag {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            color: #64748b;
+            background: #fff;
+        }
+        .resume-border {
+            border-left: 2px solid #e2e8f0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .resume-dot::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0.5rem;
+            width: 8px;
+            height: 8px;
+            background: #00091b;
+            border-radius: 50%;
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-white overflow-x-hidden">
+<!-- Navigation -->
+<nav class="sticky top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-slate-100 shadow-sm">
+<div class="max-w-[1200px] mx-auto flex justify-between items-center px-8 py-5">
+<a class="text-xl font-headline italic font-bold tracking-tight text-primary flex items-center gap-2" href="#">
+            Raymond Liu
+        </a>
+<div class="hidden md:flex gap-10 items-center font-label text-[13px] font-semibold uppercase tracking-wider">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#experience">Experience</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#projects">Work</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#skills">Skills</a>
+<a class="px-5 py-2 bg-primary text-white rounded font-bold hover:bg-slate-800 transition-all flex items-center gap-2" href="#">
+                Resume
+                <span class="material-symbols-outlined text-[16px]">download</span>
+</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="pt-24 pb-20 md:pt-40 md:pb-32 relative overflow-hidden blueprint-grid">
+<div class="max-w-[1200px] mx-auto px-8 fade-in">
+<div class="grid lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-7 space-y-10">
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 text-primary font-label-caps text-label-caps uppercase rounded shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                        Northeastern University CS '28
+                    </div>
+<h1 class="font-headline text-display text-primary">
+                        Raymond Liu
+                    </h1>
+<p class="font-headline text-h3 text-on-surface-variant font-medium">B.S. in Computer Science | GPA: 3.97/4.0</p>
+</div>
+<p class="font-body text-body-lg text-on-surface max-w-xl leading-relaxed text-slate-600">
+                    A software developer passionate about building purposeful tools and high-impact applications. Currently maintaining a 3.97 GPA while developing solutions for campus organizations and personal ventures.
+                </p>
+<div class="flex flex-wrap gap-4">
+<a class="inline-flex items-center gap-3 px-6 py-3 bg-primary text-white font-bold text-sm rounded hover:bg-slate-800 transition-all shadow-lg shadow-primary/10" href="mailto:liu.raymon@northeastern.edu">
+                        📧 Email Me
+                    </a>
+<a class="inline-flex items-center gap-3 px-6 py-3 border border-slate-200 bg-white text-primary font-bold text-sm rounded hover:bg-slate-50 transition-all" href="https://github.com/raydl18" target="_blank">
+                        💻 GitHub
+                    </a>
+<a class="inline-flex items-center gap-3 px-6 py-3 border border-slate-200 bg-white text-primary font-bold text-sm rounded hover:bg-slate-50 transition-all" href="https://linkedin.com/in/raymond-liu18" target="_blank">
+                        🔗 LinkedIn
+                    </a>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[0.9] rounded-sm overflow-hidden border-[16px] border-white shadow-2xl relative z-10 bg-slate-100">
+<img alt="Raymond Liu" class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uj5zHIGfhGZn8KxgctmxxxLUUWSgAMJSEWTVCrld2DgUCNYIuVc_kmcKZF8CjnbhwaNdg7xaxdJQ93CovTThsrJbkmgXQkbrBvl5IBYBB0MOY870MiLFdVXorIN4r3IWstuiaqiTgyqibVAniZKle_XXNg1gr7tI-ohbnEu_P6taVByb9EMTeAfpNwFUKqtL91lsa-pKjSuiAKSt1JWRrERgtg9mz4pj1lezbp9kbXeA9euEe94PB6s4vNK19g6c00S9bCtYj4C"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-slate-200/50 -z-0 rounded-full blur-3xl"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience & Education -->
+<!-- Selected Engineering Work (Creative Layout) -->
+<section class="py-32 bg-slate-50 overflow-hidden" id="projects">
+<div class="max-w-[1200px] mx-auto px-8">
+<div class="mb-24 text-center max-w-2xl mx-auto fade-in">
+<span class="font-label-caps text-primary tracking-[0.4em] uppercase font-bold">Selected Engineering Work</span>
+<h2 class="font-headline text-h1 text-primary mt-6">Production-Ready Applications</h2>
+</div>
+<div class="space-y-32">
+<!-- Project 1: RefClock (Image Left 60%) -->
+<div class="grid lg:grid-cols-10 gap-12 items-center fade-in">
+<div class="lg:col-span-6 order-1">
+<div class="bg-slate-900 p-8 rounded shadow-2xl flex gap-6 overflow-x-auto scrollbar-hide snap-x border border-slate-800">
+<img alt="RefClock Screen 1" class="h-80 rounded shadow-lg snap-center" src="https://lh3.googleusercontent.com/aida/ADBb0uge2iRVzGRjdfcokIEO1R1H9pNlskWEveORFdJW_jXUlPTD0n7TdWvj9oBRNtU2VN5UTY6bJnUzPuqkqmbJpW6BmrMW1P7UYWVn-jbNi2mx0gZwgJ7lUawUjEWwvNXSgR0ohg5UoCdrtBiasGCjFqzTJa2PONltvqRK0CnAPae77ErjV8Snjq3iCglQ7rOIzJIw9qq-vweBEEt3OmfFItVdEbk09-v4a3WKMPk_WkHBJckZ1gHIfkBXdqQlO3PkVak2WoXugSzIlw"/>
+<img alt="RefClock Screen 2" class="h-80 rounded shadow-lg snap-center" src="https://lh3.googleusercontent.com/aida/ADBb0ugGfJtVZEQr5IqbHCWyvQvgAAmidFGtwgAbCTH39Fa6AQLOcEdoDmW8wHUWmPG0_u8Sydt9bwNQMAJUmxoIv-Ufdy2qTFTXypzGFOjm97kSuMNPnIiVd1mSyDP8gARJhGP8BCBYMjwax3ikc-M19jP3pzBOvL_uDEwgzliGMQyekrOfFaWcXiguND80x7t7hC_UqfOLRpdl9CE1P_pOqLJ_X49X-HXaxHc-bCnj_eBpn-Is3H8AuBMflcuhUvjEIn-qW7SovpY89w"/>
+</div>
+</div>
+<div class="lg:col-span-4 order-2 space-y-6">
+<div class="space-y-2">
+<h3 class="font-headline text-h3 text-primary">RefClock (Mobile App)</h3>
+<div class="flex flex-wrap gap-2">
+<span class="tech-tag">JavaScript</span><span class="tech-tag">PWA</span><span class="tech-tag">Supabase</span>
+</div>
+</div>
+<ul class="list-disc list-outside ml-4 space-y-3 text-[14px] text-slate-600 leading-relaxed">
+<li>Built and shipped an offline-capable progressive web app, packaged as a Trusted Web Activity (TWA) and published to the Google Play Store after closed and production testing tracks</li>
+<li>Engineered a real-time match timer and scorekeeper that logs live game events (goals, cards, player numbers), backed by Supabase authentication and cloud-synced state</li>
+<li>Grew organic adoption to 20+ Northeastern Intramural Soccer officials through direct outreach</li>
+</ul>
+</div>
+</div>
+<!-- Project 2: Oasis Club (Image Right 60%) -->
+<div class="grid lg:grid-cols-10 gap-12 items-center fade-in">
+<div class="lg:col-span-4 order-2 lg:order-1 space-y-6">
+<div class="space-y-2">
+<h3 class="font-headline text-h3 text-primary">Oasis Club @ NEU</h3>
+<div class="flex flex-wrap gap-2">
+<span class="tech-tag">React</span><span class="tech-tag">Zustand</span><span class="tech-tag">Supabase</span><span class="tech-tag">PostgreSQL</span>
+</div>
+</div>
+<ul class="list-disc list-outside ml-4 space-y-3 text-[14px] text-slate-600 leading-relaxed">
+<li>Built a fully deployed Goodreads-style book tracking app with Open Library API integration, search, trending books, and recently viewed recommendations</li>
+<li>Implemented Supabase authentication and user profiles with reading stats, shelves (read/reading), and a page progress tracker</li>
+</ul>
+</div>
+<div class="lg:col-span-6 order-1 lg:order-2">
+<div class="aspect-video bg-white rounded shadow-xl overflow-hidden border border-slate-200">
+<img alt="Oasis Discovery" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujAPEDZ_3QKBBrdaCg0s3Fx6sKoN-cvsap-uTBO297niUQnD1w0oH5dbxTwXEFdmAUmaeBE5ZOfCfejo5Z1OPKEWIB56JokmqKHF-wZfWETLNYREHkzSnPGJgJYWszR37TzgVOnmCCaAsvet8MPxUaTMFX8CePlqTBqtdLwSn0NEplqqPHto4iyQ6uTLYXYTaQEjMXxyxIgZZ5jN8riOcLH89UbzRcNzSIe10xiEYJWaAhLv6Es4a_Ml-CviG11QV5ReTmKT7Q0IQ"/>
+</div>
+</div>
+</div>
+<!-- Two-Up Layout for the rest -->
+<div class="grid lg:grid-cols-2 gap-16">
+<!-- Project 3: Plant (Vertical Focus) -->
+<div class="space-y-8 fade-in group">
+<div class="aspect-[4/5] bg-white rounded shadow-lg overflow-hidden border border-slate-200">
+<img alt="Plant Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwNR6Mwip3W6WUmEVDvfMmw1oBKR4GgmCdYT9RbIZ_6XBrWpcojBU9UGOrWLTZ_tHcZuLldxyOq4G2KMigxXAU0IpTQvhzX9gXZcAOouC9Y-Lsv84W_G9RQSK9jEWy_S_8kbrhnST5gKtC-cnESEPJKDOJjmKAyeT1wSWf_MIgTUQzPmolq75dmL6KH2_dbvWOb2PvzljWUrWecORLywwysODkrJxGeqFM4cwV5aFUd2hEPEX5JOs8E4JqiC2DtzUhOd4tY72asuk"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-h3 text-primary">Plant</h3>
+<span class="text-[9px] font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded uppercase tracking-widest">Oct 2025</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="tech-tag">Next.js</span><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Python</span>
+</div>
+<p class="text-[13px] font-bold text-slate-800">NUACM Hackathon Education Track Winner</p>
+<ul class="text-[14px] text-slate-600 space-y-3 list-disc ml-4 leading-relaxed">
+<li>Built a Next.js app that helps students plan academic schedules with AI-powered course recommendations</li>
+<li>Web-scraped 1000+ courses and 100+ majors; integrated Firebase Auth and Google Gemini</li>
+</ul>
+</div>
+</div>
+<!-- Column Split for smaller works -->
+<div class="space-y-24">
+<!-- Project 4: Kelly Liu Advisory -->
+<div class="space-y-6 fade-in group">
+<div class="aspect-video bg-white rounded shadow-lg overflow-hidden border border-slate-200">
+<img alt="Kelly Liu Advisory" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM5jzcJFMzU0M75KU8ZH-xGhUemczRKteGt-7dX80L6BfqkNT9frWaxm8PPTIHak0LmQmTlFHMEq6C6jbmx--NPWraKeuXUywkdQb9RUuQTyzK_AVAnRAhvkmvKifWrEV231x_dizsyU4Zw8N9REi8wdMUjvhfQrO54BigejjjaWDdqrgIi6i5hExa5tR5KqyTWBmG2HO3T7906OPnunY5dezXQJ9zQ5k2oSkn47Z7V-AdE9TeNWSC7zOt1BJkm0wpF1dVeeUEPDg"/>
+</div>
+<div class="space-y-3">
+<h3 class="font-headline text-h3 text-primary">Kelly Liu Advisory</h3>
+<div class="flex flex-wrap gap-2">
+<span class="tech-tag">Next.js</span><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span>
+</div>
+<ul class="text-[14px] text-slate-600 space-y-2 list-disc ml-4 leading-relaxed">
+<li>Built and deployed a responsive marketing site for a business advisory client hosted on Vercel</li>
+<li>Drove all page content from reusable TypeScript data files for dynamic page generation</li>
+</ul>
+</div>
+</div>
+<!-- Project 5: ACT Acupuncture -->
+<div class="space-y-6 fade-in group">
+<div class="aspect-video bg-white rounded shadow-lg overflow-hidden border border-slate-200">
+<img alt="ACT Acupuncture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj86yPcdCVHn_xydHHYLJflnFy5FcBOye4y12cZi7xmuLKxbf3CXIDl3QODNgHgoH1Ngy4gRO9zTc0HX034YKC2Q96Q9gH-palQjTV0Z8xgLtJSLch7MRyXCgiClBJSesl2tI9DE-DYj6EnHw_lXtpSyNc4jnA_CtdEQDzhuiqReg5p0ASAgAI_qNCVyN5wJUD0odZNkhSJ8nZ_Bp1URX4KhYlk_7s53RxMLg7bmiUMsVE3hgn7GVH0RoGEUAZPPgrlO8G_8ZlRtc"/>
+</div>
+<div class="space-y-3">
+<h3 class="font-headline text-h3 text-primary">ACT Acupuncture</h3>
+<div class="flex flex-wrap gap-2">
+<span class="tech-tag">Next.js</span><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span>
+</div>
+<ul class="text-[14px] text-slate-600 space-y-2 list-disc ml-4 leading-relaxed">
+<li>Building a fast, SEO-friendly marketing website for a local acupuncture clinic</li>
+<li>Pre-render pages as static HTML for performance and accessibility-focused layout</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section class="py-32 bg-white border-y border-slate-100" id="other-experience"><div class="max-w-[1200px] mx-auto px-8"><div class="mb-16 fade-in"><span class="font-label-caps text-slate-400 uppercase">Additional Impact</span><h2 class="font-headline text-h2 text-primary mt-6">Other Experience</h2></div><div class="grid lg:grid-cols-2 gap-12"><div class="space-y-10 fade-in"><div class="pb-2"><div class="flex flex-col md:flex-row md:items-baseline justify-between gap-2"><h3 class="font-headline text-h3 text-primary">Soccer Referee</h3><span class="text-xs font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">Oct 2021 – Present</span></div><p class="text-xs font-medium text-slate-500 mb-4">Fremont Youth Soccer Club → Northeastern Intramural Official</p><ul class="list-disc list-outside ml-4 space-y-3 text-[14px] text-slate-600 leading-relaxed"><li>Officiated 150+ youth and adult matches as Center and Assistant Referee, making high-pressure, real-time calls while managing players, coaches, and spectators</li><li>Maintained 6 years of active certification with the California North State Referee Committee</li></ul></div><div class="pb-2"><div class="flex flex-col md:flex-row md:items-baseline justify-between gap-2"><h3 class="font-headline text-h3 text-primary">Los Altos Hacks Sponsorship Team</h3><span class="text-xs font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">Mar 2024 – Apr 2025</span></div><ul class="list-disc list-outside ml-4 space-y-3 text-[14px] text-slate-600 leading-relaxed mt-4"><li>Part of a team that raised $32k in sponsorship from Google, Palantir, Vercel, HRT, Juniper, + more</li><li>Organizer for the world's largest high school hackathon (420 attendees)</li></ul></div></div><div class="space-y-10 fade-in"><div class="pb-2"><div class="flex flex-col md:flex-row md:items-baseline justify-between gap-2"><h3 class="font-headline text-h3 text-primary">Machine Learning Essentials</h3><span class="text-xs font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">Jan 2024</span></div><p class="text-xs font-bold text-secondary uppercase mb-4">Python, NumPy, Pandas, Scikit-Learn</p><ul class="list-disc list-outside ml-4 space-y-3 text-[14px] text-slate-600 leading-relaxed"><li>Developed a predictive model for housing prices using linear regression and feature engineering</li><li>Implemented data cleaning and visualization pipelines to analyze dataset correlations</li></ul></div><div class="pb-2"><div class="flex flex-col md:flex-row md:items-baseline justify-between gap-2"><h3 class="font-headline text-h3 text-primary">Dragon Boat Seating App</h3><span class="text-xs font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">Aug 2023</span></div><p class="text-xs font-bold text-secondary uppercase mb-4">Java, Swing</p><ul class="list-disc list-outside ml-4 space-y-3 text-[14px] text-slate-600 leading-relaxed"><li>Created a desktop application to optimize dragon boat seating arrangements based on paddler weight and side preference</li><li>Designed a GUI for coaches to manage rosters and export seating charts</li></ul></div></div></div></div></section>
+<!-- Technical Skills -->
+<section class="py-32 bg-slate-50 border-t border-slate-100" id="education"><div class="max-w-[1200px] mx-auto px-8"><div class="grid lg:grid-cols-12 gap-16"><div class="lg:col-span-4 fade-in"><span class="font-label-caps text-slate-400 uppercase">Academic Record</span><h2 class="font-headline text-h2 text-primary mt-6">Foundation</h2><p class="text-slate-500 mt-6 text-sm leading-relaxed">A rigorous academic background focused on computer science fundamentals and continuous learning.</p></div><div class="lg:col-span-8 grid md:grid-cols-2 gap-12 fade-in"><div class="resume-border resume-dot"><h3 class="font-headline text-h3 text-primary">Northeastern University</h3><p class="text-sm font-bold text-slate-800">B.S. in Computer Science</p><p class="text-sm text-slate-500 font-medium">Sep 2025 – Dec 2028</p><div class="mt-4 space-y-2"><p class="text-[13px] text-slate-600"><span class="font-bold text-primary">GPA:</span> 3.97/4.0; Dean's List</p><p class="text-[13px] text-slate-600 leading-relaxed"><span class="font-bold">Coursework:</span> Linear Algebra, Foundations of Data Science, Object-Oriented Design, Intro to Cybersecurity</p></div></div><div class="space-y-10"><div class="resume-border"><h3 class="font-headline text-xl text-primary">De Anza College</h3><p class="text-xs text-slate-500 font-medium">Dual Enrollment</p><p class="text-[13px] text-slate-600 mt-2">Taking CS classes (22.5 units)</p></div><div class="resume-border"><h3 class="font-headline text-xl text-primary">Los Altos High School</h3><p class="text-xs text-slate-500 font-medium">Class of 2025 | Los Altos, CA</p><p class="text-[13px] text-slate-600 mt-2 font-bold">GPA: 4.28 / 4.0</p></div></div></div></div></div></section><section class="py-32 bg-white blueprint-grid" id="skills">
+<div class="max-w-[1200px] mx-auto px-8">
+<div class="grid lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4 fade-in">
+<span class="font-label-caps text-slate-400 uppercase">Technical Skills</span>
+<h2 class="font-headline text-h2 text-primary mt-6">Technical Proficiency</h2>
+<p class="text-slate-500 mt-6 text-sm leading-relaxed">
+                    A focused toolkit specializing in robust backends, reactive frontends, and precise system design.
+                </p>
+</div>
+<div class="lg:col-span-8 space-y-12 fade-in">
+<div class="space-y-4">
+<h4 class="font-label-caps text-primary text-[10px] uppercase border-b border-slate-100 pb-2">Languages</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Java</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Python</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">JavaScript</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">TypeScript</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">C/C++</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">HTML/CSS</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">SQL</span>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-primary text-[10px] uppercase border-b border-slate-100 pb-2">Developer Tools</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Git</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">VS Code</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Eclipse</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Gradle</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">PostgreSQL</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Node.js</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Vercel</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Linux/Ubuntu</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Claude Code</span>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-primary text-[10px] uppercase border-b border-slate-100 pb-2">Libraries &amp; Frameworks</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Spring Boot</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">React</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Next.js</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Tailwind CSS</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">JUnit</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Jackson</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">NumPy</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">Pandas</span>
+<span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 font-bold text-xs rounded hover:bg-white transition-colors">BeautifulSoup</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact CTA -->
+<section class="py-32 bg-primary text-white relative overflow-hidden" id="contact">
+<div class="absolute inset-0 blueprint-grid opacity-[0.03] pointer-events-none"></div>
+<div class="max-w-[1100px] mx-auto px-8 text-center relative z-10 fade-in">
+<span class="font-label-caps tracking-[0.4em] uppercase opacity-50 font-bold">Inquiries</span>
+<h2 class="text-h1 font-headline italic mt-8 leading-tight tracking-tight">Let's build together.</h2>
+<p class="text-body-lg text-slate-300 mt-10 max-w-2xl mx-auto leading-relaxed">
+            I'm currently seeking Summer Co-op and Internship opportunities for 2026. Let's connect if you're looking for a developer who values precision and impact.
+        </p>
+<div class="mt-16">
+<a class="inline-flex items-center justify-center gap-4 px-10 py-5 bg-white text-primary font-bold text-xl rounded-sm hover:shadow-[0_20px_50px_rgba(255,255,255,0.15)] transition-all hover-lift" href="mailto:liu.raymon@northeastern.edu">
+                📧 liu.raymon@northeastern.edu
+            </a>
+</div>
+<div class="mt-12 flex justify-center gap-10 opacity-60">
+<a class="hover:opacity-100 transition-opacity flex flex-col items-center gap-2" href="https://github.com/raydl18" target="_blank">
+<span class="text-xs font-bold tracking-widest uppercase">GitHub</span>
+</a>
+<a class="hover:opacity-100 transition-opacity flex flex-col items-center gap-2" href="https://linkedin.com/in/raymond-liu18" target="_blank">
+<span class="text-xs font-bold tracking-widest uppercase">LinkedIn</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full bg-white border-t border-slate-100 py-12">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center px-8 gap-8">
+<div class="font-bold text-slate-400 text-[10px] tracking-widest uppercase">© 2026 RAYMOND LIU. BUILT WITH PRECISION.</div>
+<div class="flex gap-8 font-label text-[10px] font-bold uppercase tracking-widest">
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://github.com/raydl18" target="_blank">GITHUB</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://linkedin.com/in/raymond-liu18" target="_blank">LINKEDIN</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="mailto:liu.raymon@northeastern.edu">EMAIL</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">RESUME</a>
+</div>
+</div>
+</footer>
+<script>
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body></html>
