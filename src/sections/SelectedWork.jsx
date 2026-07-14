@@ -1,7 +1,11 @@
 import Reveal from '../components/Reveal';
-import refclockSetup from '../assets/refclock-setup.jpg';
-import refclockGame from '../assets/refclock-game.jpg';
-import oasisImg from '../assets/oasis.png';
+import refclock1 from '../assets/refclock-pictures/refclock1.png';
+import refclock2 from '../assets/refclock-pictures/refclock2.png';
+import refclock3 from '../assets/refclock-pictures/refclock3.png';
+import kellyLiuImg from '../assets/kellyliuadvisory-pictures/kellyliuadvisory-picture.png';
+import actImg from '../assets/act-acupuncture-picture.png';
+import oasisImg from '../assets/chapters-pictures/chapters-discover.png';
+import plantImg from '../assets/plant-pictures/plant2.png';
 
 const toneClasses = {
   navy: 'bg-primary/5 text-primary border-primary/10',
@@ -39,18 +43,10 @@ function Bullets({ items }) {
   );
 }
 
-/**
- * Intentional placeholder for a deployed/in-progress site that has no
- * screenshot yet — a minimal browser frame over the blueprint grid.
- * Swap the whole panel for an <img> once a screenshot is available.
- */
-function SitePanel({ handle, icon, status, tone = 'navy', tall = false }) {
+/** A deployed site shown inside a minimal browser mock. */
+function BrowserFrame({ src, alt, handle, aspect = 'aspect-video' }) {
   return (
-    <div
-      className={`group/panel relative rounded overflow-hidden border border-slate-200 bg-white shadow-sm flex flex-col ${
-        tall ? 'aspect-[4/5]' : 'aspect-video'
-      }`}
-    >
+    <div className="group relative rounded overflow-hidden border border-slate-200 bg-white shadow-sm">
       <div className="flex items-center gap-1.5 px-4 py-3 border-b border-slate-100 bg-slate-50/80">
         <span className="w-2.5 h-2.5 rounded-full bg-slate-200" aria-hidden="true" />
         <span className="w-2.5 h-2.5 rounded-full bg-slate-200" aria-hidden="true" />
@@ -60,15 +56,12 @@ function SitePanel({ handle, icon, status, tone = 'navy', tall = false }) {
           <span className="font-inter text-[11px] text-slate-400 truncate">{handle}</span>
         </span>
       </div>
-      <div className="relative flex-1 blueprint-grid flex flex-col items-center justify-center gap-4 p-8 text-center">
-        <span
-          className="material-symbols-outlined text-5xl text-primary/25 group-hover/panel:text-primary/40 transition-colors"
-          style={{ fontVariationSettings: "'wght' 300" }}
-          aria-hidden="true"
-        >
-          {icon}
-        </span>
-        <StatusChip tone={tone}>{status}</StatusChip>
+      <div className={`relative ${aspect} overflow-hidden bg-slate-50`}>
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+        />
       </div>
     </div>
   );
@@ -94,16 +87,18 @@ export default function SelectedWork() {
           <Reveal className="grid lg:grid-cols-10 gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-6 order-1">
               <div className="bg-slate-900 p-6 md:p-8 rounded shadow-2xl flex gap-6 overflow-x-auto scrollbar-hide snap-x border border-slate-800">
-                <img
-                  src={refclockSetup}
-                  alt="RefClock match setup screen"
-                  className="h-72 md:h-80 w-auto rounded shadow-lg snap-center object-contain"
-                />
-                <img
-                  src={refclockGame}
-                  alt="RefClock live game timer"
-                  className="h-72 md:h-80 w-auto rounded shadow-lg snap-center object-contain"
-                />
+                {[
+                  { src: refclock1, alt: 'RefClock match setup screen' },
+                  { src: refclock2, alt: 'RefClock live match timer and score' },
+                  { src: refclock3, alt: 'RefClock final whistle and match summary' },
+                ].map((shot) => (
+                  <img
+                    key={shot.alt}
+                    src={shot.src}
+                    alt={shot.alt}
+                    className="h-72 md:h-80 w-auto rounded shadow-lg snap-center object-contain shrink-0"
+                  />
+                ))}
               </div>
             </div>
             <div className="lg:col-span-4 order-2 space-y-6">
@@ -136,7 +131,7 @@ export default function SelectedWork() {
               />
             </div>
             <div className="lg:col-span-6 order-1 lg:order-2">
-              <SitePanel handle="kelly liu advisory" icon="handshake" status="Live · Vercel" tone="navy" />
+              <BrowserFrame src={kellyLiuImg} alt="Kelly Liu Advisory marketing site" handle="kelly liu advisory" />
             </div>
           </Reveal>
 
@@ -145,7 +140,7 @@ export default function SelectedWork() {
 
             {/* 3 — ACT Acupuncture */}
             <Reveal className="space-y-8">
-              <SitePanel handle="act acupuncture" icon="spa" status="In Development" tone="amber" tall />
+              <BrowserFrame src={actImg} alt="ACT Acupuncture marketing site" handle="act acupuncture" aspect="aspect-[4/5]" />
               <div className="space-y-4">
                 <div className="flex justify-between items-start gap-4">
                   <h3 className="font-newsreader font-semibold text-2xl md:text-3xl text-primary">ACT Acupuncture</h3>
@@ -165,14 +160,8 @@ export default function SelectedWork() {
             <div className="space-y-16 lg:space-y-24">
 
               {/* 4 — Oasis Club */}
-              <Reveal className="space-y-6 group">
-                <div className="aspect-video rounded overflow-hidden border border-slate-200 shadow-sm bg-white">
-                  <img
-                    src={oasisImg}
-                    alt="Oasis Club book-tracking dashboard"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+              <Reveal className="space-y-6">
+                <BrowserFrame src={oasisImg} alt="Oasis Club book-tracking app" handle="oasis club" />
                 <div className="space-y-3">
                   <h3 className="font-newsreader font-semibold text-2xl md:text-3xl text-primary">Oasis Club @ NEU</h3>
                   <TechTags items={['React', 'Zustand', 'Supabase', 'PostgreSQL']} />
@@ -187,7 +176,7 @@ export default function SelectedWork() {
 
               {/* 5 — Plant */}
               <Reveal className="space-y-6">
-                <SitePanel handle="plant" icon="school" status="Winner" tone="gold" />
+                <BrowserFrame src={plantImg} alt="Plant academic-planning dashboard" handle="plant" />
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 flex-wrap">
                     <h3 className="font-newsreader font-semibold text-2xl md:text-3xl text-primary">Plant</h3>

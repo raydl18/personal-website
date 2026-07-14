@@ -38,14 +38,6 @@ export default function Navbar() {
               {label}
             </button>
           ))}
-          <a
-            href="/raymond_liu.pdf"
-            download="Raymond_Liu_Resume.pdf"
-            className="inline-flex items-center gap-2 px-5 py-2 bg-primary text-white rounded font-inter font-bold text-[13px] hover:bg-slate-800 transition-all active:translate-y-px"
-          >
-            Resume
-            <span className="material-symbols-outlined text-[16px]" aria-hidden="true">download</span>
-          </a>
         </div>
 
         <button
@@ -69,15 +61,6 @@ export default function Navbar() {
               {label}
             </button>
           ))}
-          <a
-            href="/raymond_liu.pdf"
-            download="Raymond_Liu_Resume.pdf"
-            className="inline-flex items-center gap-2 text-primary font-inter font-bold text-sm uppercase tracking-wider"
-            onClick={() => setMenuOpen(false)}
-          >
-            Resume
-            <span className="material-symbols-outlined text-[16px]" aria-hidden="true">download</span>
-          </a>
         </div>
       )}
     </nav>

@@ -2,7 +2,6 @@ const links = [
   { label: 'GitHub', href: 'https://github.com/raydl18', external: true },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/raymond-liu18', external: true },
   { label: 'Email', href: 'mailto:liu.raymon@northeastern.edu' },
-  { label: 'Resume', href: '/raymond_liu.pdf', download: 'Raymond_Liu_Resume.pdf' },
 ];
 
 export default function Footer() {
@@ -13,12 +12,11 @@ export default function Footer() {
           © 2026 Raymond Liu. Built with precision.
         </div>
         <div className="flex flex-wrap justify-center gap-6 md:gap-8 font-inter text-[10px] font-bold uppercase tracking-widest">
-          {links.map(({ label, href, external, download }) => (
+          {links.map(({ label, href, external }) => (
             <a
               key={label}
               href={href}
               {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
-              {...(download ? { download } : {})}
               className="text-slate-400 hover:text-primary transition-colors"
             >
               {label}
