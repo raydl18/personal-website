@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import profilePhoto from '../assets/profile.jpg';
+import profilePhoto from '../assets/linkedin-headshot.jpeg';
 
 function GitHubIcon(props) {
   return (
@@ -38,7 +38,7 @@ export default function Hero() {
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 text-primary font-dmsans text-[11px] font-bold uppercase tracking-[0.15em] rounded shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true"></span>
-                Computer Science · Northeastern University
+                Northeastern University Class of 2029
               </div>
 
               <h1 className="font-newsreader font-semibold text-5xl md:text-6xl lg:text-[64px] text-primary tracking-[-0.03em] leading-[1.05]">

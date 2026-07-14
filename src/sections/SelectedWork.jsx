@@ -33,7 +33,7 @@ const toneClasses = {
 function StatusChip({ tone = 'navy', children }) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border font-dmsans text-[10px] font-bold uppercase tracking-widest ${toneClasses[tone]}`}
+      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm border font-dmsans text-[10px] font-bold uppercase tracking-widest ${toneClasses[tone]}`}
     >
       {children}
     </span>
