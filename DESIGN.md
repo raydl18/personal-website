@@ -49,44 +49,71 @@ colors:
   on-background: '#0b1c30'
   surface-variant: '#d3e4fe'
 typography:
+  display:
+    fontFamily: Newsreader
+    fontSize: 64px
+    fontWeight: '600'
+    lineHeight: '1.05'
+    letterSpacing: -0.03em
   headline-xl:
-    fontFamily: Dm Sans
+    fontFamily: Newsreader
     fontSize: 48px
-    fontWeight: '700'
+    fontWeight: '600'
     lineHeight: '1.1'
     letterSpacing: -0.02em
   headline-lg:
-    fontFamily: Dm Sans
-    fontSize: 32px
+    fontFamily: Newsreader
+    fontSize: 36px
     fontWeight: '600'
-    lineHeight: '1.2'
+    lineHeight: '1.15'
     letterSpacing: -0.01em
   headline-md:
-    fontFamily: Dm Sans
+    fontFamily: Newsreader
+    fontSize: 30px
+    fontWeight: '600'
+    lineHeight: '1.2'
+  headline-sm:
+    fontFamily: Newsreader
     fontSize: 24px
     fontWeight: '600'
     lineHeight: '1.3'
-  body-lg:
+  subtitle:
     fontFamily: Newsreader
-    fontSize: 20px
+    fontSize: 26px
+    fontWeight: '500'
+    lineHeight: '1.3'
+  body-lg:
+    fontFamily: DM Sans
+    fontSize: 18px
     fontWeight: '400'
     lineHeight: '1.6'
   body-md:
-    fontFamily: Newsreader
-    fontSize: 17px
+    fontFamily: DM Sans
+    fontSize: 15px
     fontWeight: '400'
     lineHeight: '1.6'
+  body-sm:
+    fontFamily: DM Sans
+    fontSize: 13px
+    fontWeight: '400'
+    lineHeight: '1.5'
   label-md:
-    fontFamily: Inter
+    fontFamily: DM Sans
     fontSize: 14px
-    fontWeight: '500'
+    fontWeight: '600'
     lineHeight: '1.4'
   label-caps:
-    fontFamily: Inter
-    fontSize: 12px
+    fontFamily: DM Sans
+    fontSize: 11px
     fontWeight: '700'
     lineHeight: '1.5'
-    letterSpacing: 0.1em
+    letterSpacing: 0.3em
+  tag-caps:
+    fontFamily: DM Sans
+    fontSize: 10px
+    fontWeight: '700'
+    lineHeight: '1.4'
+    letterSpacing: 0.05em
 rounded:
   sm: 0.25rem
   DEFAULT: 0.5rem
@@ -113,9 +140,9 @@ The palette is rooted in a deep "Midnight Navy" (`#002045`) which serves as the 
 A "Cobalt" secondary color provides a bridge to modern software interfaces, while the background uses a very light "Ice Blue" (`#f8f9ff`) to distinguish it from pure white, reducing eye strain while maintaining a clean look. Functional accents like "Success Gold" are used sparingly for achievement callouts.
 
 ## Typography
-The system employs a multi-font strategy to balance character and utility. **DM Sans** is used for headlines, providing a geometric, modern touch that feels both approachable and professional. **Newsreader** is used for narrative and body descriptions to introduce an intellectual, editorial quality that contrasts with the technical surroundings. **Inter** handles all structural, navigational, and technical data, providing a high-performance, utilitarian feel for labels and metadata.
+The system employs a two-font strategy — an editorial serif paired with a geometric sans. **Newsreader** is the voice of the brand: it is used for all headings, display text, the hero name/subtitle, and editorial lines (e.g. the closing "Let's build together."), lending a literary, transitional-serif authority. **DM Sans** handles every functional duty — body copy, project bullets, navigation, buttons, tech tags/chips, dates, and all metadata — and is the default body font. Its low-contrast, geometric precision keeps the UI modern and legible at small sizes. (**Inter**, used in the earlier design, has been fully removed.)
 
-Headlines use tight tracking and aggressive line heights to create a sense of impactful, modern clarity within the corporate framework.
+Headings use tight tracking (down to -0.03em on the display size) and compact line heights for impact, while functional DM Sans labels use wide uppercase tracking (0.15em–0.4em) to read as disciplined, categorical structure.
 
 ## Layout & Spacing
 The layout follows a **Fixed Grid** approach with a maximum container width of 1100px to ensure optimal readability on large displays. 
@@ -134,7 +161,7 @@ The shape language uses high-radius curves to soften the technical precision of 
 
 ## Components
 
--   **Buttons:** Primary buttons are solid Midnight Navy with bold white Inter text. Hover states should include a subtle lift and an expanded shadow. Secondary buttons use a thick 2px border with transparent backgrounds.
+-   **Buttons:** Primary buttons are solid Midnight Navy with bold white DM Sans text. Hover states should include a subtle lift and an expanded shadow. Secondary buttons use a thick 2px border with transparent backgrounds.
 -   **Tech Tags:** Small, capsule-shaped labels with 1px borders and uppercase bold text. These use a semi-transparent background to blend with the card they sit on.
 -   **Cards:** Three variants:
     1.  **Glass Card:** Blurred background, used for informational blocks.

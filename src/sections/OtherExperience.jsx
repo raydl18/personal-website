@@ -13,7 +13,7 @@ const items = [
   },
   {
     title: 'Machine Learning Essentials',
-    date: 'Jan 2024',
+    date: 'Sep 2025 - Dec 2025',
     skills: 'Python · NumPy · Pandas · Scikit-Learn',
     bullets: [
       'Implemented basic linear regression, PCA, k-means clustering, and neural networks to predict danceability from Spotify audio features and make predictions about a sample wine dataset',
@@ -30,7 +30,7 @@ const items = [
   },
   {
     title: 'Sales & Service Associate',
-    date: '2026 – Present',
+    date: 'May 2026 – Sep 2026',
     org: '24 Hour Fitness',
     bullets: [
       'Drive membership and personal-training sales — closing thousands of dollars in training packages through cold calls and live in-club pitches',
