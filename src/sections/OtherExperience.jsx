@@ -7,8 +7,8 @@ const items = [
     title: 'Los Altos Hacks Sponsorship Team',
     date: 'Mar 2024 – Apr 2025',
     bullets: [
-      'Part of a team that raised $32k in sponsorship from Google, Palantir, Vercel, HRT, Juniper, and more',
-      "Organizer for the world's largest high school hackathon (420 attendees)",
+      "Part of a team that raised $32k in sponsorship from Google, Palantir, Vercel, HRT, Juniper, and more for the world's largest high school hackathon (420 attendees)",
+      "Utilized cold email outreach to schedule calls with tech representatives",
     ],
   },
   {
@@ -22,7 +22,7 @@ const items = [
   {
     title: 'Soccer Referee',
     date: 'Oct 2021 – Present',
-    org: 'Fremont Youth Soccer Club → Northeastern Intramural Official',
+    org: 'Fremont Youth Soccer Club & Northeastern Intramural Official',
     bullets: [
       'Officiated 150+ youth and adult matches as Center and Assistant Referee, making high-pressure, real-time calls while managing players, coaches, and spectators',
       'Maintained 6 years of active certification with the California North State Referee Committee',

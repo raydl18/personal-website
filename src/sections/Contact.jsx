@@ -13,7 +13,7 @@ export default function Contact() {
           Let&apos;s build together.
         </h2>
         <p className="font-dmsans text-lg text-slate-300 mt-8 md:mt-10 max-w-2xl mx-auto leading-relaxed">
-          I&apos;m currently seeking Summer Co-op and Internship opportunities for 2026. Let&apos;s connect
+          I&apos;m currently seeking Spring Co-op and Summer Internship opportunities for 2027. Let&apos;s connect
           if you&apos;re looking for a developer who values precision and impact.
         </p>
 
