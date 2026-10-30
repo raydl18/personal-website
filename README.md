@@ -1,16 +1,24 @@
-# React + Vite
+# Raymond Liu — Personal Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hi! I'm Raymond, a Computer Science student at Northeastern University (Class of 2029) and an incoming Software Engineer Co-op at ERGO NEXT. This is my personal website, where I share my projects, experience, and a bit about me.
 
-Currently, two official plugins are available:
+**Check it out:** <!-- TODO: add site URL -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## How It's Built
 
-## React Compiler
+- **React** + **Vite** for the frontend
+- **Tailwind CSS** for styling
+- **Newsreader** and **DM Sans** from Google Fonts
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Running It Locally
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Get in Touch
+
+- [Email](mailto:liu.raymon@northeastern.edu)
+- [LinkedIn](https://linkedin.com/in/raymond-liu18)
+- [GitHub](https://github.com/raydl18)
