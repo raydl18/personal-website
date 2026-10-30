@@ -51,9 +51,7 @@ export default function Hero() {
             </div>
 
             <p className="font-dmsans text-lg text-on-surface-variant max-w-xl leading-relaxed">
-              A software developer who builds purposeful tools and ships them. Currently maintaining
-              a high academic standing at Northeastern while developing production applications for campus
-              organizations and personal ventures.
+              I'm currently a Northeastern student and an incoming Software Engineer Co-op at ERGO NEXT. I love creating products that make everyday life easier!
             </p>
 
             <div className="flex flex-wrap gap-4">
